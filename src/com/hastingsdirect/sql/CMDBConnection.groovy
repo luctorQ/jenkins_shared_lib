@@ -1,7 +1,7 @@
 package com.hastingsdirect.sql
 
 //@GrabConfig(systemClassLoader=true)
-@Grab(group='com.h2database', module='h2', version='1.3.176')
+//@Grab(group='com.h2database', module='h2', version='1.3.176')
 
 import groovy.sql.Sql
 
