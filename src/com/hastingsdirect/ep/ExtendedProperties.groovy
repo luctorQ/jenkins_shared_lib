@@ -6,8 +6,8 @@ import java.io.Serializable
 class ExtendedProperties implements Serializable {
 	
 	public ExtendedProperties() {
-		def builds=new RepositoryBuilds()
-		builds.buildsOnePromoted()
+//		def builds=new RepositoryBuilds()
+//		builds.buildsOnePromoted()
 	}
 	
 	public String test() {
