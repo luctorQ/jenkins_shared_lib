@@ -21,7 +21,8 @@ class CMDBConnection {
 		def cl=Class.forName("org.h2.Driver")
 		println "class for name:"+cl
 		CMDBConnection conn=new CMDBConnection()
-		return groovy.sql.Sql.newInstance(conn.url,conn.user,conn.password,conn.driver)
+		return null;
+//		return groovy.sql.Sql.newInstance(conn.url,conn.user,conn.password,conn.driver)
 	}
 
 	static void execute(Closure c) {
