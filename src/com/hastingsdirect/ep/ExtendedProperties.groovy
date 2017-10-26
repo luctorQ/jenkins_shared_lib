@@ -1,3 +1,5 @@
+package com.hastingsdirect.ep;
+
 import com.hastingsdirect.sql.RepositoryBuilds
 
 class ExtendedProperties implements Serializable {

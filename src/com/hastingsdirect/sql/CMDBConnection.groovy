@@ -1,6 +1,8 @@
+package com.hastingsdirect.sql
+
 import groovy.sql.Sql
 
-public class CMDBConnection {
+class CMDBConnection {
 	/*	def url = "jdbc:sqlserver://bx1-prd-sql01.network.uk.ad:1433;databaseName=RMCMDB"
 	 def user = "JenkinsUser"
 	 def password = "ds"
