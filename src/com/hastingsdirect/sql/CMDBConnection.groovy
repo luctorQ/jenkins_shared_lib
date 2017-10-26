@@ -7,17 +7,14 @@ public class CMDBConnection {
 
 	def driver = 'com.microsoft.sqlserver.jdbc.SQLServerDriver'
 	
-	private static CMDBConnection newInstance() {
-		return new CMDBConnection()
-	}
 	
 	static Sql createConnection() {
-		CMDBConnection conn=CMDBConnection.newInstance();
+		CMDBConnection conn=new CMDBConnection()
 		return groovy.sql.Sql.newInstance(conn.url,conn.user,conn.password,conn.driver)
 	}
 
 	static void execute(Closure c) {
-		CMDBConnection conn=CMDBConnection.newInstance();
+		CMDBConnection conn=new CMDBConnection()
 		Sql.withInstance(conn.url,conn.user,conn.password,conn.driver, c);
 	}
 		
