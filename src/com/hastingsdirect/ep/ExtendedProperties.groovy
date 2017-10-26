@@ -4,7 +4,7 @@ class ExtendedProperties implements Serializable {
 	
 	public ExtendedProperties() {
 		def builds=new RepositoryBuilds()
-//		builds.buildsOnePromoted()
+		builds.buildsOnePromoted()
 	}
 	
 	public String test() {
