@@ -17,10 +17,9 @@ class CMDBConnection {
 	def password= "sa"
 	def driver= "org.h2.Driver"
 
-	static Object clazzzz() {
-		def cl=Class.forName("org.h2.Driver")
-		println "class for name:"+cl
-		return cl
+	
+	String toString() {
+		return "url:${this.url},user:${this.user},password:${this.password},driver:${this.driver}"
 	}
 
 	
