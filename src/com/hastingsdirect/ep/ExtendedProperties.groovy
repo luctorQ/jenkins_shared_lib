@@ -1,5 +1,12 @@
-class ExtendedProperties implements Serializable {
+import com.hastingsdirect.sql.RepositoryBuilds
 
+class ExtendedProperties implements Serializable {
+	
+	public ExtendedProperties() {
+		def builds=new RepositoryBuilds()
+//		builds.buildsOnePromoted()
+	}
+	
 	public String test() {
 		return "EP test"
 	}
