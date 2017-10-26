@@ -12,10 +12,10 @@ class CMDBConnection implements Serializable {
 	 def driver = 'com.microsoft.sqlserver.jdbc.SQLServerDriver'
 	 */	
 
-	def url =" jdbc:h2:tcp://192.168.56.1:9092/~/teste"
-	def user="sa"
-	def password= "sa"
-	def driver= "org.h2.Driver"
+	String url =" jdbc:h2:tcp://192.168.56.1:9092/~/teste"
+	String user="sa"
+	String password= "sa"
+	String driver= "org.h2.Driver"
 
 	
 	String toString() {
