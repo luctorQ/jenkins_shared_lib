@@ -1,5 +1,5 @@
 package com.hastingsdirect
 
-class ExtendedProperties {
+class ExtendedProperties implements Serializable {
 
 }
