@@ -12,7 +12,7 @@ class CMDBConnection {
 	 def driver = 'com.microsoft.sqlserver.jdbc.SQLServerDriver'
 	 */	
 
-	def url ="jdbc:h2:~/things;AUTO_SERVER=TRUE"
+	def url =" jdbc:h2:tcp://192.168.56.1:9092/~/teste"
 	def user="sa"
 	def password= "sa"
 	def driver= "org.h2.Driver"
