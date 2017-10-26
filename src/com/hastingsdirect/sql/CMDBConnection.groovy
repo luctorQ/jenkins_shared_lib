@@ -17,6 +17,13 @@ class CMDBConnection {
 	def password= "sa"
 	def driver= "org.h2.Driver"
 
+	static Object clazzzz() {
+		def cl=Class.forName("org.h2.Driver")
+		println "class for name:"+cl
+		return cl
+	}
+
+	
 	static Sql createConnection() {
 		def cl=Class.forName("org.h2.Driver")
 		println "class for name:"+cl
