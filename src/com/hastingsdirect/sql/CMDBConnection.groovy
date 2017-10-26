@@ -5,7 +5,7 @@ package com.hastingsdirect.sql
 
 import groovy.sql.Sql
 
-class CMDBConnection {
+class CMDBConnection implements Serializable {
 	/*	def url = "jdbc:sqlserver://bx1-prd-sql01.network.uk.ad:1433;databaseName=RMCMDB"
 	 def user = "JenkinsUser"
 	 def password = "ds"
