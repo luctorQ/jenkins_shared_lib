@@ -1,7 +1,7 @@
-class pipelineHistory implements Serializable {
+class event implements Serializable {
 	private List history=[]
 	
-	def addEvent(String msg) {
+	def add(String msg) {
 		history<<[msg:msg,date:new Date()]
 	}
 	
