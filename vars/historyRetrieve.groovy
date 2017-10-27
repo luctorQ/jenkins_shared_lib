@@ -1,6 +1,6 @@
 import com.hastingsdirect.pipeline.history.HistoryContext
 
-def call(String event msg) {
+def call() {
 	if(historyContext!=null) {
 		historyContext.listEvents()
 	}

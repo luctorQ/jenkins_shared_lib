@@ -1,6 +1,6 @@
 import com.hastingsdirect.pipeline.history.HistoryContext
 
-def call() {
+def call(String msg) {
 	println 'thisddd:'+this
 	if(historyContext==null) {
 		historyContext=new HistoryContext()
