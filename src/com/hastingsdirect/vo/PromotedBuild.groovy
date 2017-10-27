@@ -1,5 +1,7 @@
 package com.hastingsdirect.vo
 
+import org.codehaus.groovy.classgen.ReturnAdder
+
 class PromotedBuild implements Serializable {
 	Number id
 	String branch
@@ -17,4 +19,9 @@ class PromotedBuild implements Serializable {
 	String jobstatus
 	Date created_at
 	Date updated_at
+	
+	String toString() {
+		def m= this as Map
+		return m.asString() 
+	}
 }
