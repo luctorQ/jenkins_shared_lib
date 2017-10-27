@@ -5,9 +5,9 @@ import groovy.sql.Sql
 
 class RepositoryBuilds extends Repository{
 
-	public List<PromotedBuild> buildsOnePromoted() {
+	public List buildsOnePromoted() {
 		Sql sql=CMDBConnection.createConnection();
-		List<PromotedBuild> promoted=[]
+		List promoted=[]
 		def rows=sql.rows('select * from onebuildpromotion')
 		rows.each({row->
 			promoted<<rowAsMap(row)
