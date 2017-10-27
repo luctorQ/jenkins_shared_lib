@@ -1,4 +1,4 @@
-class History implements Serializable {
+class pipelineHistory implements Serializable {
 	private List history=[]
 	
 	def addEvent(String msg) {
