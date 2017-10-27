@@ -7,7 +7,9 @@ import java.io.Serializable
 class ExtendedProperties implements Serializable {
 
 
-	static ExtendedChoiceParameterDefinition createJsonField(String name,String groovyscript,String description='') {
+	static ExtendedChoiceParameterDefinition createJsonField(String name,
+			String groovyscript,String description='',
+			sharedlibrarygroovyclasspath="c:/tmp/libs_jenkins_global/jenkins_shared_lib.jar") {
 
 		ExtendedChoiceParameterDefinition parameterDefinition= new ExtendedChoiceParameterDefinition(
 				name, //name
@@ -18,11 +20,9 @@ class ExtendedProperties implements Serializable {
 				groovyscript,//groovy script
 				null,
 				null,// bindings
-				"c:/tmp/libs_jenkins_global/jenkins_shared_lib.jar",//groovyclasspath
-				//"c:/Users/PLUSZYNSKI/.jenkins/plugins/workflow-cps-global-lib/WEB-INF/lib/workflow-cps-global-lib.jar",
-				//	"c:/Users/PLUSZYNSKI/.jenkins/jobs/pipeline_test_libs/workspace@libs/test-lib/src",//groovyclasspath
+				sharedlibrarygroovyclasspath,//groovyclasspath
 				null, // propertykey
-				null,//"VALUE, B", //default value
+				null, //default value
 				null,
 				null,
 				null,
