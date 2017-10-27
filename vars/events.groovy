@@ -1,4 +1,4 @@
-class event implements Serializable {
+class events implements Serializable {
 	private List history=[]
 	
 	def add(String msg) {
