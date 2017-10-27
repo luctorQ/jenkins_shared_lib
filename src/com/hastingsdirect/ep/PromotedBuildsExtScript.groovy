@@ -9,6 +9,7 @@ import com.hastingsdirect.sql.RepositoryBuilds;
 def repo=new RepositoryBuilds()
 def builds = repo.buildsOnePromoted()
 
+def abccc='okok'
 
 def jsonEditorOptions = Boon.fromJson(/{
 	   disable_edit_json: true,
