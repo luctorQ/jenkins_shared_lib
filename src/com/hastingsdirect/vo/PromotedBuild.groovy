@@ -1,9 +1,5 @@
 package com.hastingsdirect.vo
 
-import groovy.transform.ToString
-
-
-@ToString(includeNames=true, includeFields=true)
 class PromotedBuild implements Serializable {
 	Number id
 	String branch
