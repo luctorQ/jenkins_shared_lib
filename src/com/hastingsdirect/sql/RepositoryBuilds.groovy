@@ -10,7 +10,7 @@ class RepositoryBuilds implements Serializable{
 		List<PromotedBuild> promoted=[]
 		sql.eachRow('select * from onebuildpromotion'){ row->
 			println 'rrrrow:'+row
-			promoted<<row as PromotedBuild
+			promoted<<row[0] as PromotedBuild
 		}
 
 		sql.close()
