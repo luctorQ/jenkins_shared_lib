@@ -17,5 +17,4 @@ class PromotedBuild implements Serializable {
 	String jobstatus
 	Date created_at
 	Date updated_at
-	
 }
