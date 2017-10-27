@@ -10,7 +10,6 @@ abstract class ExtendedProperty implements Serializable {
 	String name;
 	String description;
 	String sharedlibrarygroovyclasspath
-	String paramValue;
 	
 	ExtendedProperty(String name,String description='',String sharedlibrarygroovyclasspath="c:/tmp/libs_jenkins_global/jenkins_shared_lib.jar"){
 		this.name=name
@@ -18,13 +17,10 @@ abstract class ExtendedProperty implements Serializable {
 		this.sharedlibrarygroovyclasspath=sharedlibrarygroovyclasspath
 	}
 	
-	ExtendedProperty(Object paramValue){
-		this.paramValue=paramValue
-	}
-
 	abstract String groovyScript()
-	Object getValue() {
-		return this.paramValue
+	
+	static Object getValue(paramValue) {
+		return paramValue
 	}
 	
 	ExtendedChoiceParameterDefinition createJsonField() {

@@ -11,6 +11,10 @@ class PromotedBuildsExt extends ExtendedProperty{
 	String groovyScript() {
 		return groovyScriptFromCodeSource("scripts/PromotedBuildsExtScript.groovy");
 	}
-
+	
+	@Override
+	static Object getValue(paramValue) {
+		return paramValue
+	}
 	
 }
