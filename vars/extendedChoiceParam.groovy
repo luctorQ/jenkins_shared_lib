@@ -6,5 +6,5 @@ def call(Map map=[name:'JSON_PARAM',groovyScript:'',description:'']) {
 
 
 def call(ExtendedProperty ep) {
-	return ExtendedProperty.createJsonField(ep.name)
+	return ep.createJsonField()
 }
