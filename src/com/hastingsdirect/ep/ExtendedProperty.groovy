@@ -25,7 +25,7 @@ abstract class ExtendedProperty implements Serializable {
 
 	String groovyScriptFromCodeSource(String groovyFileName) {
 		def is=new InputStreamReader(this.getClass().getResourceAsStream(groovyFileName))
-		def gsc=new GroovyCodeSource(is,'scriptgr','UTF-8')
+		def gsc=new GroovyCodeSource(is,'script_name_dynamic','UTF-8')
 		return gsc.scriptText
 	}
 
