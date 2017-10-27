@@ -17,7 +17,7 @@ class PromotedBuildsExt extends ExtendedProperty{
 		def jsonValue=ExtendedProperty.fromJson(paramValue)
 		def allSelected=jsonValue.findAll{it.select}
 		if(allSelected.size()!=1) {
-			throw new IllegalArgumentException("One build must be selected")
+			throw new IllegalArgumentException("One build must be selected but selectred ${allSelected.size()}")
 		}
 		
 		return allSelected[0]
