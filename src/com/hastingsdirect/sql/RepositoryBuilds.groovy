@@ -10,7 +10,7 @@ class RepositoryBuilds implements Serializable{
 		List<PromotedBuild> promoted=[]
 		def rows=sql.rows('select * from onebuildpromotion')
 		rows.each({row->
-			promoted<<row as PromotedBuild
+			promoted<<new PromotedBuild(row.id)
 		})
 		
 /*		sql.eachRow('select * from onebuildpromotion'){ row->
