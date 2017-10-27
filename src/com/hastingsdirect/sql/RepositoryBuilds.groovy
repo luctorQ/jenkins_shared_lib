@@ -3,7 +3,7 @@ package com.hastingsdirect.sql
 import com.hastingsdirect.vo.PromotedBuild
 import groovy.sql.Sql
 
-class RepositoryBuilds {
+class RepositoryBuilds implements Serializable{
 
 	public List<PromotedBuild> buildsOnePromoted() {
 		Sql sql=CMDBConnection.createConnection();
