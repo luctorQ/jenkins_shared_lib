@@ -23,7 +23,9 @@ abstract class ExtendedProperty implements Serializable {
 	}
 
 	abstract String groovyScript()
-	abstract Object parseValue(Object param)
+	Object getValue(Object param) {
+		return param
+	}
 	
 	ExtendedChoiceParameterDefinition createJsonField() {
 		return ExtendedProperty.createJsonField(this.name,this.groovyScript(),this.description,this.sharedlibrarygroovyclasspath)

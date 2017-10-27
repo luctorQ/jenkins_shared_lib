@@ -12,10 +12,5 @@ class PromotedBuildsExt extends ExtendedProperty{
 		return groovyScriptFromCodeSource("scripts/PromotedBuildsExtScript.groovy");
 	}
 
-	@Override
-	public Object parseValue(Object param) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 	
 }
