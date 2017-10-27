@@ -6,4 +6,8 @@ class HistoryContext implements Serializable {
 	void addEvent(String msg) {
 		history<<[date:new Date(),msg:msg]
 	}	
+	
+	List listEvents() {
+		return history;
+	}
 }
