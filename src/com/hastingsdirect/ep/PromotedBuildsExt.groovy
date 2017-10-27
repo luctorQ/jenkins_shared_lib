@@ -6,8 +6,16 @@ class PromotedBuildsExt extends ExtendedProperty{
 	PromotedBuildsExt(String name,String description='',String sharedlibrarygroovyclasspath="c:/tmp/libs_jenkins_global/jenkins_shared_lib.jar"){
 		super(name,description,sharedlibrarygroovyclasspath)
 	}
+	
+	@Override
 	String groovyScript() {
 		return groovyScriptFromCodeSource("scripts/PromotedBuildsExtScript.groovy");
+	}
+
+	@Override
+	public Object parseValue(Object param) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 }
