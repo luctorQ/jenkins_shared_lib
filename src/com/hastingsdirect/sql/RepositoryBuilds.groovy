@@ -3,7 +3,7 @@ package com.hastingsdirect.sql
 import com.hastingsdirect.vo.PromotedBuild
 import groovy.sql.Sql
 
-class RepositoryBuilds extends Repository implements Serializable{
+class RepositoryBuilds extends Repository{
 
 	public List<PromotedBuild> buildsOnePromoted() {
 		Sql sql=CMDBConnection.createConnection();
@@ -12,11 +12,11 @@ class RepositoryBuilds extends Repository implements Serializable{
 		rows.each({row->
 			promoted<<rowAsMap(row)
 		})
-		
-/*		sql.eachRow('select * from onebuildpromotion'){ row->
-			promoted<<row as Map
-		}
-*/
+
+		/*		sql.eachRow('select * from onebuildpromotion'){ row->
+		 promoted<<row as Map
+		 }
+		 */
 		sql.close()
 		return promoted;
 	}
