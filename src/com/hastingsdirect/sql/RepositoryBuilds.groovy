@@ -9,6 +9,7 @@ class RepositoryBuilds implements Serializable{
 		Sql sql=CMDBConnection.createConnection();
 		List<PromotedBuild> promoted=[]
 		sql.eachRow('select * from onebuildpromotion'){ row->
+			println 'rrrrow:'+row
 			promoted<<row as PromotedBuild
 		}
 
