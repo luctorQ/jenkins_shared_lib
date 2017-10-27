@@ -1,6 +1,6 @@
 package com.hastingsdirect.pipeline.history
 
-class HistoryContext {
+class HistoryContext implements Serializable {
 	def history=[]
 	
 	void addEvent(String msg) {
