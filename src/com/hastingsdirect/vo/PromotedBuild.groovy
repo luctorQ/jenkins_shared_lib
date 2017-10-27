@@ -17,4 +17,8 @@ class PromotedBuild implements Serializable {
 	String jobstatus
 	Date created_at
 	Date updated_at
+	
+	String ret() {
+		return "id:${this.id} build:${this.cijenkinsbuildid}"
+	}
 }
