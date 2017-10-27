@@ -9,14 +9,14 @@ class RepositoryBuilds implements Serializable{
 		Sql sql=CMDBConnection.createConnection();
 		List<PromotedBuild> promoted=[]
 		def rows=sql.rows('select * from onebuildpromotion')
-/*		rows.each({row->
+		rows.each({row->
 			promoted<<row as Map
 		})
-*/		
-		sql.eachRow('select * from onebuildpromotion'){ row->
+		
+/*		sql.eachRow('select * from onebuildpromotion'){ row->
 			promoted<<row as Map
 		}
-
+*/
 		sql.close()
 		return promoted;
 	}
