@@ -1,4 +1,3 @@
-package com.hastingsdirect.pipeline.history
 
 class HistoryContext implements Serializable {
 	private List history=[]
