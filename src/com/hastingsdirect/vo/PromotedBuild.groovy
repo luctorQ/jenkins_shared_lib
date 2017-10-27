@@ -18,6 +18,10 @@ class PromotedBuild implements Serializable {
 	Date created_at
 	Date updated_at
 
+	public PromotedBuild() {
+		
+	}
+	
 	public PromotedBuild(
 	Integer id
 	,String branch
