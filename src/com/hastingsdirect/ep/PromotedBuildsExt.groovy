@@ -20,7 +20,7 @@ class PromotedBuildsExt extends ExtendedProperty{
 			throw new IllegalArgumentException("One build must be selected but selected ${allSelected.size()}")
 		}
 		
-		return allSelected[0]
+		return [:]<<allSelected[0]
 	}
 	
 }
