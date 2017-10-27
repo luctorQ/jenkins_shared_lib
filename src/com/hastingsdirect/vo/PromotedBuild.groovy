@@ -1,7 +1,9 @@
 package com.hastingsdirect.vo
 
-import org.codehaus.groovy.classgen.ReturnAdder
+import groovy.transform.ToString
 
+
+@ToString(includeNames=true, includeFields=true)
 class PromotedBuild implements Serializable {
 	Number id
 	String branch
