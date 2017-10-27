@@ -8,7 +8,7 @@ class RepositoryBuilds extends Repository{
 	public List buildsOnePromoted() {
 		Sql sql=CMDBConnection.createConnection();
 		List promoted=[]
-		def rows=sql.rows('select * from onebuildpromotion')
+		def rows=sql.rows('select * from onebuildpromotion order by cijenkinsbuildid desc')
 		rows.each({row->
 			promoted<<rowAsMap(row)
 		})
