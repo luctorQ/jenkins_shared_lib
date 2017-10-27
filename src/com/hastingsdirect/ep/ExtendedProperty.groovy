@@ -19,6 +19,12 @@ abstract class ExtendedProperty implements Serializable {
 	
 	abstract String groovyScript()
 	
+	
+	/**
+	 * method where result may be parsed
+	 * @param paramValue Should be params.<name of ExtendedProperty>
+	 * @return
+	 */
 	static Object getValue(paramValue) {
 		return paramValue
 	}
