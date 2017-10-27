@@ -5,7 +5,7 @@ class pipelineHistory implements Serializable {
 		history<<[msg:msg,date:new Date()]
 	}
 	
-	def getHistory() {
+	def getList() {
 		return history
 	}
 }
