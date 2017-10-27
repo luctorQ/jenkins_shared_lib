@@ -6,7 +6,8 @@ import java.io.Serializable
 abstract class ExtendedProperty implements Serializable {
 
 
-	static ExtendedChoiceParameterDefinition createJsonField(String name,
+	static ExtendedChoiceParameterDefinition createJsonField(
+			String name,
 			String groovyscript='',
 			String description='',
 			sharedlibrarygroovyclasspath="c:/tmp/libs_jenkins_global/jenkins_shared_lib.jar") {
@@ -45,5 +46,12 @@ abstract class ExtendedProperty implements Serializable {
 				","
 				)
 		return parameterDefinition;
+	}
+	
+	
+	String groovyScriptFromCodeSource(String groovyFileName) {
+		def is=new InputStreamReader(this.getClass().getResourceAsStream(groovyFileName))
+		def gsc=new GroovyCodeSource(is,'scriptgr','UTF-8')
+		return gsc.scriptText
 	}
 }
