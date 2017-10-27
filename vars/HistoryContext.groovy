@@ -1,13 +1,13 @@
 package com.hastingsdirect.pipeline.history
 
 class HistoryContext implements Serializable {
-	def history=[]
+	private List history=[]
 	
-	void addEvent(String msg) {
+	def addEvent(String msg) {
 		history<<[date:new Date(),msg:msg]
 	}	
 	
-	List listEvents() {
+	def listEvents() {
 		return history;
 	}
 }
