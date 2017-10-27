@@ -4,7 +4,8 @@ import groovy.lang.GroovyCodeSource;
 class PromotedBuildsExt extends ExtendedProperty{
 
 	String groovyScript() {
-		def gsc=new GroovyCodeSource(new InputStreamReader(this.getClass().getResourceAsStream("PromotedBuildsExtScript.groovy")))
+		def is=new InputStreamReader(this.getClass().getResourceAsStream("PromotedBuildsExtScript.groovy"))
+		def gsc=new GroovyCodeSource(is,'scriptgr','UTF-8')
 		return gsc;
 	}
 	
