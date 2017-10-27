@@ -62,6 +62,6 @@ def jsonEditorOptions = ExtendedProperty.fromJson(/{
 	  }
 	}
 },
-	   startval: \${ExtendedProperty.toJson(builds)}
+	startval: ${ExtendedProperty.toJson(builds)}
 }/);
 return jsonEditorOptions
