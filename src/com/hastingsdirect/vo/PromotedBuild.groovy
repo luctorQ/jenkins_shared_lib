@@ -20,8 +20,4 @@ class PromotedBuild implements Serializable {
 	Date created_at
 	Date updated_at
 	
-	String toString() {
-		def m= this as Map
-		return m.asString() 
-	}
 }
