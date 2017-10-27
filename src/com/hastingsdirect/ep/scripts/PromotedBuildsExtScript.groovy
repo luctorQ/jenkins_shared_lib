@@ -1,4 +1,4 @@
-package com.hastingsdirect.ep
+package com.hastingsdirect.ep.scripts
 
 
 import org.boon.Boon;
