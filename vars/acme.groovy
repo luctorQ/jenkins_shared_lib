@@ -1,5 +1,5 @@
 class acme implements Serializable {
-	private List history
+	private List history=[]
 	private String name
 	def setName(value) {
 		name = value
