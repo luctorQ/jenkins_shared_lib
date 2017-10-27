@@ -14,7 +14,12 @@ class PromotedBuildsExt extends ExtendedProperty{
 	
 	@Override
 	static Object getValue(paramValue) {
-		return paramValue
+		def allSelected=paramValue.findAll{it.select}
+		if(allSelected.size()!=1) {
+			throw new IllegalArgumentException("One build may be selected")
+		}
+		
+		return allSelected[0]
 	}
 	
 }
