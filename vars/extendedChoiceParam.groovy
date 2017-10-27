@@ -1,6 +1,6 @@
-import com.hastingsdirect.ep.ExtendedProperties
+import com.hastingsdirect.ep.ExtendedProperty
 
 def call(Map map=[name:'JSON_PARAM',groovyScript:'',description:'']) {
-	return ExtendedProperties.createJsonField(map.name,map.groovyScript,map.description)
+	return ExtendedProperty.createJsonField(map.name,map.groovyScript,map.description)
 }
 

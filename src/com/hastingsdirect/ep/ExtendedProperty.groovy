@@ -1,10 +1,9 @@
 package com.hastingsdirect.ep
 
 import com.cwctravel.hudson.plugins.extended_choice_parameter.ExtendedChoiceParameterDefinition
-import com.hastingsdirect.sql.RepositoryBuilds
 import java.io.Serializable
 
-class ExtendedProperties implements Serializable {
+abstract class ExtendedProperty implements Serializable {
 
 
 	static ExtendedChoiceParameterDefinition createJsonField(String name,
@@ -46,18 +45,5 @@ class ExtendedProperties implements Serializable {
 				","
 				)
 		return parameterDefinition;
-	}
-
-	public ExtendedProperties() {
-		//		def builds=new RepositoryBuilds()
-		//		builds.buildsOnePromoted()
-	}
-
-	public String test() {
-		return "EP test"
-	}
-
-	public String test2() {
-		return "test 2"
 	}
 }
