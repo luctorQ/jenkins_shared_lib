@@ -18,8 +18,18 @@ abstract class ExtendedProperty implements Serializable {
 	}
 	
 	abstract String groovyScript()
-	
-	
+
+	ExtendedChoiceParameterDefinition createJsonField() {
+		return ExtendedProperty.createJsonField(this.name,this.groovyScript(),this.description,this.sharedlibrarygroovyclasspath)
+	}
+
+	String groovyScriptFromCodeSource(String groovyFileName) {
+		def is=new InputStreamReader(this.getClass().getResourceAsStream(groovyFileName))
+		def gsc=new GroovyCodeSource(is,'scriptgr','UTF-8')
+		return gsc.scriptText
+	}
+
+		
 	/**
 	 * method where result may be parsed
 	 * @param paramValue Should be params.<name of ExtendedProperty>
@@ -28,11 +38,7 @@ abstract class ExtendedProperty implements Serializable {
 	static Object getValue(paramValue) {
 		return paramValue
 	}
-	
-	ExtendedChoiceParameterDefinition createJsonField() {
-		return ExtendedProperty.createJsonField(this.name,this.groovyScript(),this.description,this.sharedlibrarygroovyclasspath)
-	}
-	
+		
 	static ExtendedChoiceParameterDefinition createJsonField(
 			String name,
 			String groovyscript='',
@@ -84,9 +90,4 @@ abstract class ExtendedProperty implements Serializable {
 	}
 	
 	
-	String groovyScriptFromCodeSource(String groovyFileName) {
-		def is=new InputStreamReader(this.getClass().getResourceAsStream(groovyFileName))
-		def gsc=new GroovyCodeSource(is,'scriptgr','UTF-8')
-		return gsc.scriptText
-	}
 }
