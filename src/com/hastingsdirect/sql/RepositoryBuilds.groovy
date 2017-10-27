@@ -8,7 +8,7 @@ class RepositoryBuilds {
 	public List<PromotedBuild> buildsOnePromoted() {
 		Sql sql=CMDBConnection.createConnection();
 		List<PromotedBuild> promoted=[]
-		sql.eachRow('select * from PROJECT where name=:foo', [foo:'Gradle']){ row->
+		sql.eachRow('select * from onebuildpromotion'){ row->
 			promoted<<row as PromotedBuild
 		}
 
