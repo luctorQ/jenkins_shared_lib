@@ -8,7 +8,8 @@ class ExtendedProperties implements Serializable {
 
 
 	static ExtendedChoiceParameterDefinition createJsonField(String name,
-			String groovyscript,String description='',
+			String groovyscript='',
+			String description='',
 			sharedlibrarygroovyclasspath="c:/tmp/libs_jenkins_global/jenkins_shared_lib.jar") {
 
 		ExtendedChoiceParameterDefinition parameterDefinition= new ExtendedChoiceParameterDefinition(
