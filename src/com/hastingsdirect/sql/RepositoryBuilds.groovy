@@ -17,6 +17,7 @@ class RepositoryBuilds implements Serializable{
 			promoted<<row as Map
 		}
 */
+		rows=null;
 		sql.close()
 		return promoted;
 	}
