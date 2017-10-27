@@ -10,7 +10,7 @@ class RepositoryBuilds extends Repository{
 		List promoted=[]
 		def rows=sql.rows('select * from onebuildpromotion')
 		rows.each({row->
-			promoted<<rowAsMap(row)
+			promoted<<new PromotedBuild(rowAsMap(row))
 		})
 
 		/*		sql.eachRow('select * from onebuildpromotion'){ row->
