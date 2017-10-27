@@ -1,4 +1,6 @@
 package com.hastingsdirect.ep
+import org.boon.Boon
+import org.boon.json.JsonFactory;
 
 import com.cwctravel.hudson.plugins.extended_choice_parameter.ExtendedChoiceParameterDefinition
 import java.io.Serializable
@@ -46,6 +48,14 @@ abstract class ExtendedProperty implements Serializable {
 				","
 				)
 		return parameterDefinition;
+	}
+	
+	static fromJson(String jsonString) {
+		return Boon.fromJson(jsonString)
+	}
+	
+	static toJson(value) {
+		return JsonFactory.toJson(value)
 	}
 	
 	

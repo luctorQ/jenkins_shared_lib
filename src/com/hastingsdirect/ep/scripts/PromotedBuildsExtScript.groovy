@@ -1,17 +1,12 @@
 package com.hastingsdirect.ep.scripts
 
-
-import org.boon.Boon;
-import org.boon.json.JsonFactory;
 import com.hastingsdirect.ep.ExtendedProperty;
 import com.hastingsdirect.sql.RepositoryBuilds;
 
 def repo=new RepositoryBuilds()
 def builds = repo.buildsOnePromoted()
 
-def abccc='okok'
-
-def jsonEditorOptions = Boon.fromJson(/{
+def jsonEditorOptions = ExtendedProperty.fromJson(/{
 	   disable_edit_json: true,
 	   disable_properties: true,
 	   no_additional_properties: true,
@@ -67,6 +62,6 @@ def jsonEditorOptions = Boon.fromJson(/{
 	  }
 	}
 },
-	   startval: \${JsonFactory.toJson(builds)}
+	   startval: \${ExtendedProperty.toJson(builds)}
 }/);
 return jsonEditorOptions
