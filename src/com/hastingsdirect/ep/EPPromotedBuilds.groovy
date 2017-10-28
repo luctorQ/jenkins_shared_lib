@@ -1,15 +1,15 @@
 package com.hastingsdirect.ep
 import groovy.lang.GroovyCodeSource;
 
-class PromotedBuildsExt extends ExtendedProperty{
+class EPPromotedBuilds extends ExtendedProperty{
 
-	PromotedBuildsExt(String name,String description=''){
+	EPPromotedBuilds(String name,String description=''){
 		super(name,description)
 	}
 	
 	@Override
 	String groovyScript() {
-		return groovyScriptFromCodeSource("scripts/PromotedBuildsExtScript.groovy");
+		return groovyScriptFromCodeSource("scripts/EPPromotedBuildsScript.groovy");
 	}
 	
 	@Override
