@@ -26,7 +26,6 @@ class CMDBConnection implements Serializable {
 		CMDBConnection conn=new CMDBConnection()
 		println 'connnn driver:'+conn.driver+' url:'+conn.url
 		return groovy.sql.Sql.newInstance(conn.url,conn.user,conn.password,conn.driver)
-//		return groovy.sql.Sql.newInstance('jdbc:h2:tcp://192.168.56.1:9092/~/teste','sa','sa','org.h2.Driver')
 	}
 
 	static void execute(Closure c) {
