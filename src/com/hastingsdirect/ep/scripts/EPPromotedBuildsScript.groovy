@@ -6,7 +6,8 @@ import com.hastingsdirect.sql.RepositoryBuilds;
 def repo=new RepositoryBuilds()
 def builds = repo.buildsOnePromoted()
 
-//def dbInfo=repo.fetchDBInfo()
+def dbInfo=repo.fetchDBInfo2()
+
 
 def jsonEditorOptions = ExtendedProperty.fromJson(/{
 	   disable_edit_json: true,
