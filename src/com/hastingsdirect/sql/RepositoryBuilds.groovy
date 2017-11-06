@@ -20,4 +20,8 @@ class RepositoryBuilds extends Repository{
 		sql.close()
 		return promoted;
 	}
+	
+	public List fetchDBInfo() {
+		return []
+	}
 }
