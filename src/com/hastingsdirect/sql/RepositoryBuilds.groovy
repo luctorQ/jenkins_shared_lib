@@ -24,4 +24,8 @@ class RepositoryBuilds extends Repository{
 	public List fetchDBInfo() {
 		return []
 	}
+	
+	public List fetchDBInfo2() {
+		return []
+	}
 }
