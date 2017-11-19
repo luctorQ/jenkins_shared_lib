@@ -18,7 +18,7 @@ def call(eventsList) {
 	
 	def eventsHistory=env.EVENTS_HISTORY?:'[]'
 	def mapper =  JsonFactory.create();
-	def restored1=mapper.fromJson(eventsHistory,List.class,Event.class)
+	def restored1=mapper.readValue(eventsHistory,List.class,Event.class)
 	println 'restored%%%'+restored1
 //	mapper=null;
 	def restored=Boon.fromJson(eventsHistory)
