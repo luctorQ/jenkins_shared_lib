@@ -5,8 +5,8 @@ def call() {
 	println 'events this:'+this.events
 	println 'events:'+events
 	
-	println 'binding:'+this.getBinding().getVariables()
-	println 'binding:'+this.getBinding().getVariables().steps
+	println 'binding variables:'+this.getBinding().getVariables()
+	println 'binding steps:'+this.getBinding().getVariables().steps
 	
 	println 'allmethods:'+this.metaClass.methods*.name.sort().unique()
 	
