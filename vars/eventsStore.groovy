@@ -1,7 +1,7 @@
 import org.boon.Boon
 import org.boon.json.JsonFactory;
 
-def call() {
+def call(eventsList) {
 	println 'eventsStore class:'+this.getClass()
 	println 'eventsStore superclass:'+this.getClass().getSuperclass()
 	println 'eventsStore this:'+this
@@ -15,7 +15,7 @@ def call() {
 	
 	def eventsHistory=env.EVENTS_HISTORY?:'[]'
 	def restored=Boon.fromJson(eventsHistory)
-//	restored.addAll(events.list)
+	restored.addAll(eventsList)
 	
 	println 'restored:'+restored
 	
