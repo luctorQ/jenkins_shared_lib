@@ -17,7 +17,7 @@ def call(eventsList) {
 	events.add('abc')
 	
 	def restoredHistory=eventsRestore()
-	
+	println ('restoredHistory:',restoredHistory)
 	def restored=[restoredHistory,eventsList,events.list].flatten()
 	return restored
 	/*
