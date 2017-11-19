@@ -4,6 +4,8 @@ def call() {
 	println 'events this:'+this.events
 	println 'events:'+events
 	
+	println 'env.pipelineEvents:'+env.pipelineEvents
+	
 	events.add('abc')
 	env.EVENTS_HISTORY=events.list
 	println 'inside events history:'+events.list
