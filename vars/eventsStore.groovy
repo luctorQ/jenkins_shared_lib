@@ -19,6 +19,7 @@ def call(eventsList) {
 	def restoredHistory=eventsRestore()
 	println ('restoredHistory:',restoredHistory)
 	def restored=[restoredHistory,eventsList,events.list].flatten()
+	println('storeAll:'+restored)
 	env.EVENTS_HISTORY=JsonFactory.toJson(restored)
 	
 //	return restored
