@@ -1,3 +1,4 @@
+import org.boon.Boon
 import org.boon.json.JsonFactory;
 
 def call() {
@@ -12,8 +13,8 @@ def call() {
 	
 	events.add('abc')
 	
-	List restored=eventsRestore()
-	
+	def eventsHistory=env.EVENTS_HISTORY?:'[]'
+	def restored=Boon.fromJson(eventsHistory)
 	restored.addAll(events.list)
 	
 	println 'restored:'+restored
