@@ -4,8 +4,7 @@ import org.boon.Boon
 import org.boon.json.JsonFactory
 //import org.jenkinsci.plugins.workflow.support.steps.build.RunWrapper
 
-def parse(String jsonHistory='[]') {
-	println('jsonHistory'+jsonHistory)
+def parse(String jsonHistory) {
 	def history=Boon.fromJson(jsonHistory?:'[]')
 
 	def parsedHistory=[]
