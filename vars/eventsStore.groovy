@@ -19,9 +19,9 @@ def call(eventsList) {
 	
 	def restoredHistory=eventsRestore()
 //	def restoredHistory=[]
-	println ('store restoredHistory:',restoredHistory)
-	println ('store eventsList :',eventsList)
-	println ('store events.list :',events.list)
+	println('store restoredHistory:'+restoredHistory)
+	println('store eventsList :'+eventsList)
+	println('store events.list :'+events.list)
 	
 	def restored=[restoredHistory,eventsList,events.list].flatten()
 	println('storeAll:'+restored)
