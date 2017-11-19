@@ -1,3 +1,3 @@
-def call() {
-	env.EVENTS_HISTORY=events.list
+def call(history) {
+	env.EVENTS_HISTORY=history
 }
