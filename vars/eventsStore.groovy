@@ -1,5 +1,6 @@
 def call() {
 	println 'eventsStore class:'+this.getClass()
+	println 'eventsStore superclass:'+this.getClass().getSuperclass()
 	println 'eventsStore this:'+this
 	println 'events this:'+this.events
 	println 'events:'+events
