@@ -15,7 +15,7 @@ def call() {
 	
 	def eventsHistory=env.EVENTS_HISTORY?:'[]'
 	def restored=Boon.fromJson(eventsHistory)
-	restored.addAll(events.list)
+//	restored.addAll(events.list)
 	
 	println 'restored:'+restored
 	
