@@ -1,5 +1,8 @@
 import org.boon.Boon
 import org.boon.json.JsonFactory;
+import com.hastingsdirect.ep.Event;
+
+
 
 def call(eventsList) {
 	println 'eventsStore class:'+this.getClass()
@@ -14,7 +17,7 @@ def call(eventsList) {
 	events.add('abc')
 	
 	def eventsHistory=env.EVENTS_HISTORY?:'[]'
-	def restored=Boon.fromJson(eventsHistory)
+	def restored=Boon.fromJson(eventsHistory,List.class,Event.class)
 	restored=[restored, eventsList,events.list].flatten()
 	
 	println 'restored:'+restored
