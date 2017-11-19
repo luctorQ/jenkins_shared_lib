@@ -16,6 +16,11 @@ def call(eventsList) {
 	
 	events.add('abc')
 	
+	def restoredHistory=eventsRestore()
+	
+	def restored=[restoredHistory,eventsList,events.list].flatten()
+	return restored
+	
 	def eventsHistory=env.EVENTS_HISTORY?:'[]'
 	def mapper =  JsonFactory.create();
 	def restored1=mapper.readValue(eventsHistory,List.class,Event.class)
