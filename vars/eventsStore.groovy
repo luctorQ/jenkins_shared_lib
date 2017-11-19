@@ -17,7 +17,7 @@ def call(eventsList) {
 	events.add('abc')
 	
 	def eventsHistory=env.EVENTS_HISTORY?:'[]'
-	ObjectMapper mapper =  JsonFactory.create();
+//	ObjectMapper mapper =  JsonFactory.create();
 //	def restored=mapper.fromJson(eventsHistory,List.class,Event.class)
 //	printl 'restored%%%'+restored
 //	mapper=null;
