@@ -16,8 +16,8 @@ def call(eventsList) {
 	
 	events.add('abc')
 	
-	def restoredHistory=eventsRestore()
-//	def restoredHistory=[]
+//	def restoredHistory=eventsRestore()
+	def restoredHistory=[]
 	println ('store restoredHistory:',restoredHistory)
 	println ('store eventsList :',eventsList)
 	println ('store events.list :',events.list)
@@ -45,4 +45,3 @@ def call(eventsList) {
 	println('env.events_History after toJson:'+env.EVENTS_HISTORY)
 	println 'inside events history:'+events.list
 }*/
-}
