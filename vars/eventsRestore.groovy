@@ -4,7 +4,9 @@ import org.boon.Boon
 import org.boon.json.JsonFactory
 //import org.jenkinsci.plugins.workflow.support.steps.build.RunWrapper
 
-def parse(List history=[]) {
+def parse(String jsonHistory='[]') {
+	def history=Boon.fromJson(jsonHistory)
+
 	def parsedHistory=[]
 	history.each({row->
 		def rowMap=[:]
@@ -22,17 +24,15 @@ def parse(List history=[]) {
 
 def call(build) {
 	def j1EnvVariables = build.buildVariables;
-	def extHistory=j1EnvVariables.EVENTS_HISTORY?:'[]'
-	def value=Boon.fromJson(extHistory)
-	value=parse(value)
+	def extHistory=j1EnvVariables.EVENTS_HISTORY
+	def value=parse(extHistory)
 	return value
 }
 
 def call() {
 	println('eventsRestore call')
-	def extHistory=env.EVENTS_HISTORY?:'[]'
-	def value=Boon.fromJson(extHistory)
-	value=parse(value)
+	def extHistory=env.EVENTS_HISTORY
+	def value=parse(extHistory)
 	println('eventsRestore call result:'+value)
 	return value
 }
