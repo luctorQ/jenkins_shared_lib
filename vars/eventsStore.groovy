@@ -6,6 +6,7 @@ def call() {
 	println 'events:'+events
 	
 	println 'binding:'+this.getBinding().getVariables()
+	println 'binding:'+this.getBinding().getVariables().steps
 	
 	println 'allmethods:'+this.metaClass.methods*.name.sort().unique()
 	
