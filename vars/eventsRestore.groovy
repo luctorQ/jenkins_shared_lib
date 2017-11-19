@@ -33,5 +33,6 @@ def call() {
 	def extHistory=env.EVENTS_HISTORY?:'[]'
 	def value=Boon.fromJson(extHistory)
 	value=parse(value)
+	println('eventsRestore call result:'+value)
 	return value
 }
