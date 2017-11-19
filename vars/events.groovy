@@ -3,6 +3,8 @@ class events implements Serializable {
 	
 	def add(String msg) {
 		history<<[msg:msg,date:new Date()]
+		env.EV=env.EV:?''
+		env.EV+=msg+'|'
 	}
 	
 	def getList() {
