@@ -4,6 +4,8 @@ def call() {
 	println 'events this:'+this.events
 	println 'events:'+events
 	
+	println 'allmethods:'+this.metaClass.methods*.name.sort().unique()
+	
 	println 'env.pipelineEvents:'+env.pipelineEvents
 	pipelineEvents.add('inscript add')
 	
