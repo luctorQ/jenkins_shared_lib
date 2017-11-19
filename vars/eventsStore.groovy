@@ -17,10 +17,9 @@ def call(eventsList) {
 	events.add('abc')
 	
 	def eventsHistory=env.EVENTS_HISTORY?:'[]'
-	ObjectMapper mapper =  JsonFactory.create();
-	mapper=null
-//	def restored=mapper.fromJson(eventsHistory,List.class,Event.class)
-//	printl 'restored%%%'+restored
+	def mapper =  JsonFactory.create();
+	def restored1=mapper.fromJson(eventsHistory,List.class,Event.class)
+	println 'restored%%%'+restored1
 //	mapper=null;
 	def restored=Boon.fromJson(eventsHistory)
 	restored=[restored, eventsList,events.list].flatten()
