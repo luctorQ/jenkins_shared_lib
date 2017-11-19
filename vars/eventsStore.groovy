@@ -1,3 +1,5 @@
+import org.boon.json.JsonFactory;
+
 def call() {
 	println 'eventsStore class:'+this.getClass()
 	println 'eventsStore superclass:'+this.getClass().getSuperclass()
@@ -8,12 +10,14 @@ def call() {
 	println 'binding variables:'+this.getBinding().getVariables()
 	println 'binding steps:'+this.getBinding().getVariables().steps
 	
-	println 'allmethods:'+this.metaClass.methods*.name.sort().unique()
-	
-	println 'env.pipelineEvents:'+env.pipelineEvents
-	pipelineEvents.add('inscript add')
-	
 	events.add('abc')
-	env.EVENTS_HISTORY=events.list
+	
+	List restored=eventsRestore()
+	
+	restored.addAll(events.list)
+	
+	println 'restored:'+restored
+	
+	env.EVENTS_HISTORY=JsonFactory.toJson(restored)
 	println 'inside events history:'+events.list
 }
