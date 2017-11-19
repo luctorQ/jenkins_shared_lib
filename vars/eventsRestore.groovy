@@ -6,7 +6,7 @@ import org.boon.json.JsonFactory
 
 def parse(List history=[]) {
 	def parsedHistory=[]
-	history.each({row
+	history.each({row->
 		def rowMap=[:]
 		row.keySet().each{key->
 			def value=row[key]
