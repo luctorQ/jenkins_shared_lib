@@ -22,7 +22,7 @@ def call(eventsList) {
 	println 'restored%%%'+restored1
 //	mapper=null;
 	def restored=Boon.fromJson(eventsHistory)
-	restored=[restored, eventsList,events.list].flatten()
+	restored=[restored1,restored, eventsList,events.list].flatten()
 	
 	println 'restored:'+restored
 	
