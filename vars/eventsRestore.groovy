@@ -6,7 +6,7 @@ import org.boon.json.JsonFactory
 
 def parse(String jsonHistory='[]') {
 	println('jsonHistory'+jsonHistory)
-	def history=Boon.fromJson(jsonHistory)
+	def history=Boon.fromJson(jsonHistory?:'[]')
 
 	def parsedHistory=[]
 	history.each({row->
