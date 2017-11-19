@@ -5,6 +5,8 @@ def call() {
 	println 'events this:'+this.events
 	println 'events:'+events
 	
+	println 'binding:'+this.getBinding()
+	
 	println 'allmethods:'+this.metaClass.methods*.name.sort().unique()
 	
 	println 'env.pipelineEvents:'+env.pipelineEvents
