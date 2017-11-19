@@ -2,7 +2,7 @@ import java.util.Map
 
 import org.boon.Boon
 import org.boon.json.JsonFactory
-//import org.jenkinsci.plugins.workflow.support.steps.build.RunWrapper
+import org.jenkinsci.plugins.workflow.support.steps.build.RunWrapper
 
 def parse(String jsonHistory) {
 	def history=Boon.fromJson(jsonHistory?:'[]')
@@ -22,7 +22,7 @@ def parse(String jsonHistory) {
 	return parsedHistory
 }
 
-def call(build) {
+def call(RunWrapper build) {
 	def j1EnvVariables = build.buildVariables;
 	def extHistory=j1EnvVariables.EVENTS_HISTORY
 	def value=parse(extHistory)
