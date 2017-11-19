@@ -2,7 +2,7 @@ import java.util.Map
 
 import org.boon.Boon
 import org.boon.json.JsonFactory
-import org.jenkinsci.plugins.workflow.support.steps.build.RunWrapper
+//import org.jenkinsci.plugins.workflow.support.steps.build.RunWrapper
 
 
 /*Map rowAsMap(Map row) {
@@ -29,7 +29,7 @@ def parse(List history=[]) {
 	return parsedHistory
 }
 
-def call(RunWrapper build) {
+def call(build) {
 	def j1EnvVariables = build.buildVariables;
 	def extHistory=j1EnvVariables.EVENTS_HISTORY?:'[]'
 	def value=Boon.fromJson(extHistory)
