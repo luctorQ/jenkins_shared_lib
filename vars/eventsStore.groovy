@@ -20,5 +20,7 @@ def call(eventsList) {
 	println 'restored:'+restored
 	
 	env.EVENTS_HISTORY=JsonFactory.toJson(restored)
+	
+	println('env.events_History after toJson:'+env.EVENTS_HISTORY)
 	println 'inside events history:'+events.list
 }
