@@ -5,10 +5,11 @@ class events implements Serializable {
 		this.addNamed(msg:msg)
 	}
 
-	def addNamed(Map params=[type:'GENERAL']) {
-		def eventData=params
-		println ('event Data:'+eventData)
+	def addNamed(Map params=[msg:null,type:'GENERAL']) {
+		def eventData=params;
+		eventData[date:new Date()]
 //		eventData[date:new Date(), type:params[type]?:'GENERAL']
+		println ('event Data:'+eventData)
 		history<<eventData
 	}
 
