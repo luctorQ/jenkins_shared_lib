@@ -19,14 +19,14 @@ def call(Map params) {
 	def event=createEvent(params)	
 	def allEvents=eventsRestore()
 	allEvents<<event
-	env.EVENTS_HISTORY=JsonFactory.toJson(restored)
+	env.EVENTS_HISTORY=JsonFactory.toJson(allEvents)
 }
 
 def call(String msg,String type='GENERAL') {
 	def event=createEvent(msg:msg,type:type)
 	def allEvents=eventsRestore()
 	allEvents<<event
-	env.EVENTS_HISTORY=JsonFactory.toJson(restored)
+	env.EVENTS_HISTORY=JsonFactory.toJson(allEvents)
 }
 
 def call(eventsList) {
