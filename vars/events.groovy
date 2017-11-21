@@ -7,7 +7,8 @@ class events implements Serializable {
 
 	def addNamed(Map params) {
 		def eventData=params
-		eventData[date:new Date(), type:params[type]?:'GENERAL']
+		println ('event Data:'+eventData)
+//		eventData[date:new Date(), type:params[type]?:'GENERAL']
 		history<<eventData
 	}
 
