@@ -2,12 +2,7 @@ class events implements Serializable {
 	private List history=[]
 
 	def add(String msg,String type,ref) {
-		Map params=[
-			msg:msg,
-			type:type,
-			ref:ref
-		]
-		addNamed(params)
+		addNamed(msg:msg,type:type,ref:ref)
 	}
 
 	def addNamed(Map params) {
