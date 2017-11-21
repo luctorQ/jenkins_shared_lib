@@ -9,7 +9,7 @@ class events implements Serializable {
 		def eventData=[
 			msg:params.msg,
 			date:new Date(),
-			type:params.type?:'GENERAL'
+			type:params.type?:'GENERAL',
 			ref:params.ref
 		];
 
