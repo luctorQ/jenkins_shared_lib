@@ -7,6 +7,7 @@ def convert(val) {
 	println 'convert1:'+val
 	println 'convert2:'+val?val.getClass():null
 	if(val && val instanceof GString) {
+		println 'I am in GString'
 		return val.toString()
 	}else {
 		return val
