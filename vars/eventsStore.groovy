@@ -2,7 +2,6 @@ import java.util.Map
 
 import org.boon.Boon
 import org.boon.json.JsonFactory;
-//import com.hastingsdirect.ep.Event;
 
 def createEvent(Map params) {
 		def eventData=[
