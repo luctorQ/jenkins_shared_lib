@@ -4,7 +4,8 @@ import org.boon.Boon
 import org.boon.json.JsonFactory;
 
 def convert(val) {
-	println 'convert v:'+val+' c:'+val?val.getClass():null
+	println 'convert1:'+val
+	println 'convert2:'+val?val.getClass():null
 	if(val && val instanceof GString) {
 		return val.toString()
 	}else {
