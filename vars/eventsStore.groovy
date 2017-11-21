@@ -1,8 +1,33 @@
+import java.util.Map
+
 import org.boon.Boon
 import org.boon.json.JsonFactory;
 //import com.hastingsdirect.ep.Event;
 
+def createEvent(Map params) {
+		def eventData=[
+			msg:params.msg,
+			date:new Date(),
+			type:params.type?:'GENERAL',
+			ref:params.ref
+		];
+		return eventData
+	}
 
+	
+def call(Map params) {
+	def event=createEvent(params)	
+	def allEvents=eventsRestore()
+	allEvents<<event
+	env.EVENTS_HISTORY=JsonFactory.toJson(restored)
+}
+
+def call(String msg,String type='GENERAL') {
+	def event=createEvent(msg:msg,type:type)
+	def allEvents=eventsRestore()
+	allEvents<<event
+	env.EVENTS_HISTORY=JsonFactory.toJson(restored)
+}
 
 def call(eventsList) {
 	script{
