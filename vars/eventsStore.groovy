@@ -3,12 +3,20 @@ import java.util.Map
 import org.boon.Boon
 import org.boon.json.JsonFactory;
 
+def convert(val) {
+	if(val && val instanceof GString) {
+		return val.toString()
+	}else {
+		return val
+	}
+}
+
 def createEvent(Map params) {
 		def eventData=[
-			msg:params.msg,
+			msg:convert(params.msg),
 			date:new Date(),
-			type:params.type?:'GENERAL',
-			ref:params.ref
+			type:convert(params.type)?:'GENERAL',
+			ref:convert(params.ref)
 		];
 		return eventData
 	}
