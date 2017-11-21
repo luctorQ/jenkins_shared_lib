@@ -3,17 +3,16 @@ class events implements Serializable {
 
 	def add(String msg,String type,ref) {
 		Map params=[
-				msg:msg,
-				date:new Date(),
-				type:type,
-				ref:ref
-			]
+			msg:msg,
+			type:type,
+			ref:ref
+		]
 		add(params)
 	}
 
-	def add(Map params=[type='GENERAL']) {
+	def add(Map params) {
 		def eventData=params
-		eventData[date:new Date()]
+		eventData[date:new Date(), type:params[type]?:'GENERAL']
 		history<<eventData
 	}
 
