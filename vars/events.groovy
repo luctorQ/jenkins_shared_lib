@@ -7,10 +7,10 @@ class events implements Serializable {
 			type:type,
 			ref:ref
 		]
-		add(params)
+		addNamed(params)
 	}
 
-	def add(Map params) {
+	def addNamed(Map params) {
 		def eventData=params
 		eventData[date:new Date(), type:params[type]?:'GENERAL']
 		history<<eventData
