@@ -13,6 +13,7 @@ def call(String templatepath) {
 	println 'TTTTTTT:'+str
 
 	println 'classpath:'+tpl.getClass().getClassLoader().getResource('')
+	return str
 }
 
 def call(){
