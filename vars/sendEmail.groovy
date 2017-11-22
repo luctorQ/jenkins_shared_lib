@@ -28,7 +28,7 @@ def call(String templatepath) {
 
 	def bindings=[
 		TEST:'ok',
-		APP_BUILD_DONE:HISTORY_EVENTS.findAll({it.type=='APP_BUILD_DONE'})
+		APP_BUILD_DONE:HISTORY_EVENTS.findAll({it.type=='APP_BUILD_DONE'}).collect{it.ref}
 	]
 
 	println 'bindings:'+bindings
