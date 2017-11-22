@@ -9,7 +9,7 @@ bodyContents: contents {
 	APP_BUILD_DONE?div{
 		h3('CREATED APPS')
 		table{
-			APP_BUILD-DONE.each{
+			APP_BUILD_DONE.each{
 				row{
 					td(it.appname)
 					td(it.buildidentifier)
