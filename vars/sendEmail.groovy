@@ -4,7 +4,7 @@ import groovy.text.markup.MarkupTemplateEngine
 import groovy.text.markup.TemplateConfiguration
 import com.hastingsdirect.ep.ExtendedProperty
 
-def HISTORY_EVENTS_JSON="""
+HISTORY_EVENTS_JSON="""
 [{
 		"date":1511369584479,"msg":"Build 621 of pc completed with result UNSTABLE","ref":{
 			"build":{
