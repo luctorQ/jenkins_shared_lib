@@ -5,6 +5,8 @@ def call(){
 	println 'nothing'
 	def tpl = libraryResource 'com/hastingsdirect/templates/Test3.groovy'
 
+	println 'tplclass:'+tpl.getClass()
+	
 	def engine = new groovy.text.XmlTemplateEngine()
 	def template=engine.createTemplate(tpl).make(binding)
 	
