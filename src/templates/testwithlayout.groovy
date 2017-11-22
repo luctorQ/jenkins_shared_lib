@@ -2,6 +2,8 @@ layout 'templates/layouts/layout-email.groovy',
 title: 'email',
 bodyContents: contents {
 	
+	TEST?p('TEST exists'):p('no TEST')
+	
 	APP_BUILD_DONE?{
 		h3('CREATED APPS')	
 	}:p('No new crated builds')

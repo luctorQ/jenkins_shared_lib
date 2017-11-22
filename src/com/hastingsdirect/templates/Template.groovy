@@ -13,9 +13,6 @@ class Template implements Serializable {
 	}
 
 	String eval(String template,Map bindings=[:]) {
-		def resolved=engine.resolveTemplate(template)
-		println 'resolved url:'+resolved
-
 		def compiledTemplate =engine.createTemplateByPath(template).make(bindings)
 		return compiledTemplate.toString()
 	}
