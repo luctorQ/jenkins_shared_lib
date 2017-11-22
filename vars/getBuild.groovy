@@ -6,7 +6,7 @@ def call(jobName,buildId) {
 	//			.getAction(hudson.model.ParametersAction)
 	
 	if(job!=null) {
-		return new org.jenkinsci.plugins.workflow.support.steps.build.RunWrapper(job)
+		return new org.jenkinsci.plugins.workflow.support.steps.build.RunWrapper(job,false)
 	}else {
 		return null
 	}
