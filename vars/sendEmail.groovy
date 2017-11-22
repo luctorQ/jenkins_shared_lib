@@ -8,32 +8,33 @@ def call(String templatepath) {
 	println 'workspace:'+WORKSPACE
 	println 'templatepath:'+templatepath
 	println 'pwd:'+pwd()
-	Template tpl=new Template(env.WORKSPACE)
-	
+	def mytemplate=new Template('gogo')
+	def str=mytemplate.eval('com/hastingsdirect/templates/emailtemplate.groovy')
+	println 'TTTTTTT:'+str
+
 	println 'classpath:'+tpl.getClass().getClassLoader().getResource('')
-	
 }
 
 def call(){
 	def binding = [firstname: 'Jochen', lastname: 'Theodorou', nickname: 'blackdrag']
 	println 'nothing'
 	def tpl = libraryResource 'com/hastingsdirect/templates/Test3.groovy'
-	
+
 	tpl=tpl.trim().replaceFirst("^([\\W]+)<","<");
 	println 'tplclass:'+tpl.getClass()
 	println 'tpl:'+tpl
-	
+
 	TemplateConfiguration config = new TemplateConfiguration();
 	MarkupTemplateEngine engine = new MarkupTemplateEngine(config);
-		
+
 	def template=engine.createTemplate(tpl).make(binding)
-	
+
 	/*println 'template:'+tpl
-	println 'template class:'+tpl.getClass()
-	Template template=new Template()*/
-//	def tpl=template.evalTemplate(tpl)
-	
+	 println 'template class:'+tpl.getClass()
+	 Template template=new Template()*/
+	//	def tpl=template.evalTemplate(tpl)
+
 	println('evaluated:'+template.toString())
 	return template.toString()
-	
+
 }
