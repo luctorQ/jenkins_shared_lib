@@ -11,7 +11,7 @@ class Template implements Serializable {
 		engine = new MarkupTemplateEngine(this.getClass().getClassLoader(),config);
 	}
 	
-	String eval(String template,Map bindings=[]) {
+	String eval(String template,Map bindings=[:]) {
 		def compiledTemplate =engine.createTemplate(template).make(binding)
 		return compiledTemplate.toString()
 	}
