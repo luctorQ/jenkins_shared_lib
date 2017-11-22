@@ -7,7 +7,7 @@ import groovy.text.markup.TemplateConfiguration
 def call(String templatepath) {
 	println 'workspace:'+WORKSPACE
 	println 'templatepath:'+templatepath
-	Template tpl=new Template(WORKSPACE)
+	Template tpl=new Template(env.WORKSPACE)
 	
 }
 
