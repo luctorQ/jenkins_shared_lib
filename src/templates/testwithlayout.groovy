@@ -11,8 +11,8 @@ bodyContents: contents {
 		table{
 			APP_BUILD_DONE.each{b->			
 				tr{
-					td(b.appname)
-					td(b.buildidentifier)
+					td(b.build.appname)
+					td(b.build.buildidentifier)
 				}
 			}
 
