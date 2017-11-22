@@ -8,7 +8,6 @@ class Template implements Serializable {
 
 	Template(String workspace){
 		println 'workspace:'+workspace
-		
 		TemplateConfiguration config = new TemplateConfiguration();
 		engine = new MarkupTemplateEngine(this.getClass().getClassLoader(),config);
 	}
