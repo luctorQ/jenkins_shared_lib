@@ -15,18 +15,18 @@ def convert(val) {
 }
 
 def createEvent(Map params) {
-		def eventData=[
-			msg:convert(params.msg),
-			date:new Date(),
-			type:convert(params.type)?:'GENERAL',
-			ref:convert(params.ref)
-		];
-		return eventData
-	}
+	def eventData=[
+		msg:convert(params.msg),
+		date:new Date(),
+		type:convert(params.type)?:'GENERAL',
+		ref:convert(params.ref)
+	];
+	return eventData
+}
 
-	
+
 def call(Map params) {
-	def event=createEvent(params)	
+	def event=createEvent(params)
 	def allEvents=eventsRestore()
 	allEvents<<event
 	env.EVENTS_HISTORY=JsonFactory.toJson(allEvents)
@@ -41,6 +41,6 @@ def call(String msg,String type='GENERAL') {
 
 def call(List eventsList) {
 	def allEvents=eventsRestore()
-	def combinedEvents=[allEvents,eventsList].flatten()
+	def combinedEvents=[allEvents, eventsList].flatten()
 	env.EVENTS_HISTORY=JsonFactory.toJson(combinedEvents)
 }
