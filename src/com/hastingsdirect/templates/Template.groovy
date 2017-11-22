@@ -12,7 +12,7 @@ class Template implements Serializable {
 	}
 	
 	String eval(String template,Map bindings=[:]) {
-		def compiledTemplate =engine.createTemplate(template).make(bindings)
+		def compiledTemplate =engine.createTemplateByPath(template).make(bindings)
 		return compiledTemplate.toString()
 	}
 	
