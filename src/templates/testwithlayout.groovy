@@ -10,13 +10,19 @@ bodyContents: contents {
 		h3('CREATED APPS')
 		table{
 			tr{
-				th('app')
-				th('build No.')
+				th('Status')
+				th('App')
+				th('Build No.')
+				th('Build url')
 			}
-			APP_BUILD_DONE.each{b->			
+			APP_BUILD_DONE.each{b->
 				tr{
+					td(b.build.buildresult)
 					td(b.build.appname)
-					td(b.build.buildidentifier)
+					td(b.build.jenkinsbuildnumber)
+					td{
+						a(href:b.build.jenkinsbuildurl,b.build.jenkinsbuildurl)
+					}
 				}
 			}
 
