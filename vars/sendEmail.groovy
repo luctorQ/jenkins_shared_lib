@@ -1,5 +1,9 @@
 import com.hastingsdirect.templates.Template
 
+import groovy.text.markup.MarkupTemplateEngine
+import groovy.text.markup.TemplateConfiguration
+
+
 def call(){
 	def binding = [firstname: 'Jochen', lastname: 'Theodorou', nickname: 'blackdrag']
 	println 'nothing'
@@ -9,7 +13,9 @@ def call(){
 	println 'tplclass:'+tpl.getClass()
 	println 'tpl:'+tpl
 	
-	def engine = new groovy.text.XmlTemplateEngine()
+	TemplateConfiguration config = new TemplateConfiguration();
+	MarkupTemplateEngine engine = new MarkupTemplateEngine(config);
+		
 	def template=engine.createTemplate(tpl).make(binding)
 	
 	/*println 'template:'+tpl
