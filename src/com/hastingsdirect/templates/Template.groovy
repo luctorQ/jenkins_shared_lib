@@ -3,15 +3,15 @@ package com.hastingsdirect.vo
 class Template implements Serializable {
 
 	String createTemplate() {
-		yieldUnescaped '<!DOCTYPE html>'
-		html(lang:'en') {
-			head {
-				meta('http-equiv':'"Content-Type" content="text/html; charset=utf-8"')
-				title('My page')
-			}
-			body {
-				p('This is an example of HTML contents')
-			}
-		}
+		
+	}
+	
+	static String templateScriptFromCodeSource(String templateFileName) {
+		def is=new InputStreamReader(this.getClass().getResourceAsStream(templateFileName))
+		def gsc=new GroovyCodeSource(is,'script_name_dynamic','UTF-8')
+		
+		def shell=new GroovyShell()
+		
+		return shell.evaluate(gsc)
 	}
 }
