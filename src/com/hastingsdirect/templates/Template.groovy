@@ -1,4 +1,4 @@
-package com.hastingsdirect.vo
+package com.hastingsdirect.templates
 
 class Template implements Serializable {
 	

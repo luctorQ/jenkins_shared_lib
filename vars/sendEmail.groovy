@@ -1,4 +1,4 @@
-//import com.hastingsdirect.templates.Template
+import com.hastingsdirect.templates.Template
 
 def call(){
 	println 'nothing'
