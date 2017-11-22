@@ -11,6 +11,6 @@ html(lang:'en') {
 	}
 	body {
 		p('This is an example of HTML contents from class loader')
-		includeGroovy('templates/includedtpl.groovy')
+		includeGroovy('templates/parts/includedtpl.groovy')
 	}
 }
