@@ -4,9 +4,7 @@ bodyContents: contents {
 	
 	TEST?p('TEST exists'):p('no TEST')
 	
-	APP_BUILD_DONE?{
-		h3('CREATED APPS')	
-	}:p('No new crated builds')
+	APP_BUILD_DONE?h3('CREATED APPS'):p('No new crated builds')
 /*	APP_BUILD_DONE.each{
 		fragment 
 	}
