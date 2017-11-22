@@ -9,7 +9,7 @@ def call(String templatepath) {
 	println 'templatepath:'+templatepath
 	println 'pwd:'+pwd()
 	def mytemplate=new Template('gogo')
-	def str=mytemplate.eval('com/hastingsdirect/templates/emailtemplate.groovy')
+	def str=mytemplate.eval('templates/emailtemplate.groovy')
 	println 'TTTTTTT:'+str
 
 	println 'classpath:'+tpl.getClass().getClassLoader().getResource('')
