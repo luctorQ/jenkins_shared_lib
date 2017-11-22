@@ -4,6 +4,10 @@ def call(jobName,buildId) {
 			.find {job -> job.fullName == jobName }
 			.getBuildByNumber(buildId)
 	//			.getAction(hudson.model.ParametersAction)
-			
-	return new org.jenkinsci.plugins.workflow.support.steps.build.RunWrapper(job)
+	
+	if(job!=null) {
+		return new org.jenkinsci.plugins.workflow.support.steps.build.RunWrapper(job)
+	}else {
+		return null
+	}
 }
