@@ -4,6 +4,11 @@ import groovy.text.markup.MarkupTemplateEngine
 import groovy.text.markup.TemplateConfiguration
 
 
+def call(String templatepath) {
+	Template tpl=new Template(WORKSPACE)
+	
+}
+
 def call(){
 	def binding = [firstname: 'Jochen', lastname: 'Theodorou', nickname: 'blackdrag']
 	println 'nothing'
