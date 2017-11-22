@@ -6,6 +6,7 @@ class Template implements Serializable {
 	String evalTemplate(template) {
 		println 'evalTemplate:'+template;
 		def shell=new GroovyShell()
+		return shell.evaluate(template)
 		
 	}
 	
