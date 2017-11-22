@@ -24,5 +24,6 @@ def call(){
 //	def tpl=template.evalTemplate(tpl)
 	
 	println('evaluated:'+template.toString())
+	return template.toString()
 	
 }
