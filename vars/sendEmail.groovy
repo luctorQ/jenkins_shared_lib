@@ -7,7 +7,7 @@ import groovy.text.markup.TemplateConfiguration
 def call(){
 	def binding = [firstname: 'Jochen', lastname: 'Theodorou', nickname: 'blackdrag']
 	println 'nothing'
-	def tpl = libraryResource 'com/hastingsdirect/templates/t.tpl'
+	def tpl = libraryResource 'com/hastingsdirect/templates/Test3.groovy'
 	
 	tpl=tpl.trim().replaceFirst("^([\\W]+)<","<");
 	println 'tplclass:'+tpl.getClass()
