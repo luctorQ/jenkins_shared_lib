@@ -10,6 +10,8 @@ def call(String templatepath) {
 	println 'pwd:'+pwd()
 	Template tpl=new Template(env.WORKSPACE)
 	
+	println 'classpath:'+tpl.getClass().getClassLoader().getResource('/')
+	
 }
 
 def call(){
