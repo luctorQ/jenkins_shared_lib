@@ -4,7 +4,10 @@ import groovy.text.markup.MarkupTemplateEngine
 import groovy.text.markup.TemplateConfiguration
 import com.hastingsdirect.ep.ExtendedProperty
 
-HISTORY_EVENTS_JSON="""
+
+
+def call(String templatepath) {
+	def	HISTORY_EVENTS_JSON="""
 [{
 		"date":1511369584479,"msg":"Build 621 of pc completed with result UNSTABLE","ref":{
 			"build":{
@@ -16,7 +19,7 @@ HISTORY_EVENTS_JSON="""
 	}]
 """
 
-def call(String templatepath) {
+
 	println 'workspace:'+WORKSPACE
 	println 'templatepath:'+templatepath
 	println 'pwd:'+pwd()
