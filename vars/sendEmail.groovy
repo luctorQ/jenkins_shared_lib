@@ -3,7 +3,7 @@ import com.hastingsdirect.templates.Template
 def call(){
 	def binding = [firstname: 'Jochen', lastname: 'Theodorou', nickname: 'blackdrag']
 	println 'nothing'
-	def tpl = libraryResource 'com/hastingsdirect/templates/Test3.groovy'
+	def tpl = libraryResource 'com/hastingsdirect/templates/t.tpl'
 	
 	tpl=tpl.trim().replaceFirst("^([\\W]+)<","<");
 	println 'tplclass:'+tpl.getClass()
