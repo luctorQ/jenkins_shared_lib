@@ -10,7 +10,7 @@ bodyContents: contents {
 		h3('CREATED APPS')
 		table{
 			APP_BUILD_DONE.each{b->
-				row{
+				tr{
 					td(b.appname)
 					td(b.buildidentifier)
 				}
