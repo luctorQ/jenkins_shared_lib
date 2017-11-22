@@ -1,13 +1,18 @@
 import com.hastingsdirect.templates.Template
 
 def call(){
+	def binding = [firstname: 'Jochen', lastname: 'Theodorou', nickname: 'blackdrag']
 	println 'nothing'
-	def tpl = libraryResource 'com/hastingsdirect/templates/Test3.groovy'	
-	println 'template:'+tpl
-	println 'template class:'+tpl.getClass()
-	Template template=new Template()
-	def res=template.evalTemplate(tpl)
+	def tpl = libraryResource 'com/hastingsdirect/templates/Test3.groovy'
+
+	def engine = new groovy.text.XmlTemplateEngine()
+	def template=engine.createTemplate(tpl).make(binding)
 	
-	println('evaluated:'+res)
+	/*println 'template:'+tpl
+	println 'template class:'+tpl.getClass()
+	Template template=new Template()*/
+//	def tpl=template.evalTemplate(tpl)
+	
+	println('evaluated:'+template.toString())
 	
 }
