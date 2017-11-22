@@ -1,13 +1,19 @@
 package com.hastingsdirect.templates
 
+import groovy.text.markup.MarkupTemplateEngine
+import groovy.text.markup.TemplateConfiguration
+
 class Template implements Serializable {
+	MarkupTemplateEngine engine
 	
+	Template(){
+		TemplateConfiguration config = new TemplateConfiguration();
+		engine = new MarkupTemplateEngine(this.getClass().getClassLoader(),config);
+	}
 	
-	String evalTemplate(template) {
-		println 'evalTemplate:'+template;
-		def shell=new GroovyShell()
-		return shell.evaluate(template)
-		
+	String eval(String template,Map bindings=[]) {
+		def compiledTemplate =engine.createTemplate(template).make(binding)
+		return compiledTemplate.toString()
 	}
 	
 	String templateScriptFromCodeSource(String templateFileName) {
