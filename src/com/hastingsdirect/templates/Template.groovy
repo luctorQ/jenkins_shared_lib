@@ -1,10 +1,6 @@
 package com.hastingsdirect.vo
 
 class Template implements Serializable {
-
-	String createTemplate() {
-		
-	}
 	
 	String templateScriptFromCodeSource(String templateFileName) {
 		def is=new InputStreamReader(this.getClass().getResourceAsStream(templateFileName))
