@@ -27,9 +27,10 @@ def call(String templatepath) {
 	def HISTORY_EVENTS=ExtendedProperty.fromJson(HISTORY_EVENTS_JSON)
 
 	def bindings=[
-		APP_BUILD_DONE:HISTORY_EVENTS.findAll({it.type=='APP_BUILD_DONE'})
+		APP_BUILD_DONE:HISTORY_EVENTS.findAll({it.type=='APP_BUILD_DONE'})?:[]
 	]
 
+	println 'bindings:'+bindings
 
 	def str=mytemplate.eval('templates/testwithlayout.groovy',bindings)
 
