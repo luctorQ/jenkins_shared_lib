@@ -10,9 +10,7 @@ def call(String templatepath) {
 	println 'pwd:'+pwd()
 	def mytemplate=new Template('gogo')
 	def str=mytemplate.eval('templates/testwithlayout.groovy')
-	println 'TTTTTTT:'+str
 
-	println 'classpath:'+tpl.getClass().getClassLoader().getResource('')
 	return str
 }
 
