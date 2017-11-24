@@ -24,7 +24,7 @@ def call(Map params=[template:null,
 			ref:[body:body]
 			)
 	}catch(e) {
-		println e
+		e.printStackTrace()
 		throw new hudson.AbortException('sendEmail error:'+e)
 	}
 }
