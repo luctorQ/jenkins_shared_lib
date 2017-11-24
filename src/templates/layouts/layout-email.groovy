@@ -16,14 +16,12 @@ html(lang:'en') {
 		table caption {
 			background-color: #3a5aa0;
 			color: #fff;
-			font-size: x-large;
 			font-weight: bold;
 			letter-spacing: .3em;
 		}
 		table thead th {
 			padding: 8px;
 			background-color: #b2c6f33d;
-			font-size: large;
 		}
 		table th, table td {
 			padding: 3px;
