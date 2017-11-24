@@ -28,7 +28,7 @@ table{
 					a(href:b.build.jenkinsbuildurl,b.build.jenkinsbuildnumber)
 				}
 				td(b.build.buildresult)
-				td(b.build.trunk?'TRUNK':(b.build.svnpath =~ /Hastings\/branches\/(\w+)/)[1])
+				td(b.build.trunk?'TRUNK':(b.build.svnpath =~ /Hastings\/branches\/(\w+)/)[0][1])
 				td(b.junittests.totalCount)
 				td(b.junittests.failCount)
 				td(b.junittests.skipCount)				
