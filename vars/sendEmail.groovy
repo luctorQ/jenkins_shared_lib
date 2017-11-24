@@ -13,7 +13,7 @@ def call(Map params=[template:null,
 
 	def template=new Template(params.template)
 	try {
-		def body=template.eval(bindings)
+		def body=template.eval(params.bindings)
 		emailext(
 				to: params.recipients,
 				replyTo: 'luchtort@gmail.com',
@@ -21,7 +21,7 @@ def call(Map params=[template:null,
 				attachmentsPattern: params.attachments,
 				body: body
 				)
-		eventsStore(msg:"Email ${params.subject} sent to ${params.recipients}",type:'EMAIL_SENT',ref:body)
+		eventsStore(msg:"Email ${params.subject} sent to ${params.recipients}",type:'EMAIL_SENT',ref:[body:body,bindings:bindings])
 	}catch(e) {
 		throw new hudson.AbortException('sendEmail error:'+e)
 	}
