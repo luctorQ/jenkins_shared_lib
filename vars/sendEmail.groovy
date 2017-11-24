@@ -7,9 +7,8 @@ def call(Map params=[template:null,
 			bindings:[:]
 		]) {
 
-	def template=new Template(params.template)
 	try {
-		def body=template.evaluate(params.bindings)
+		def body=Template.evaluate(params.template,params.bindings)
 		params.bindings=null
 		emailext(
 				to: params.recipients,
