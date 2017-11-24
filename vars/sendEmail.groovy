@@ -13,7 +13,7 @@ def call(Map params=[template:null,
 
 	def template=new Template(params.template)
 	try {
-		def body=template.eval(params.bindings)
+		def body=template.evaluate(params.bindings)
 		emailext(
 				to: params.recipients,
 				replyTo: 'luchtort@gmail.com',
