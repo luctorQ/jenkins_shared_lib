@@ -81,9 +81,7 @@ abstract class ExtendedProperty implements Serializable {
 		return parameterDefinition;
 	}
 
-	static def fromJson(String jsonString) {
-		
-		def convert(val){
+	static def convert(val){
 			if(val instanceof List) {
 				def list=[]
 				val.each({
@@ -95,6 +93,8 @@ abstract class ExtendedProperty implements Serializable {
 			}
 	
 		}
+	
+	static def fromJson(String jsonString) {
 		
 		def json = Boon.fromJson(jsonString)
 		return convert(val) 
