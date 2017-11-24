@@ -21,6 +21,13 @@ def createEvent(Map params) {
 		type:convert(params.type)?:'GENERAL',
 		ref:convert(params.ref)
 	];
+	
+	try {
+		JsonFactory.toJson(eventData)
+	}catch(e) {
+		println 'eeeeeeeeeeeeeeeeeeeeeeeeeeee:'params
+	}
+	
 	return eventData
 }
 
