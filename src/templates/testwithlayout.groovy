@@ -11,7 +11,7 @@ bodyContents: contents {
 		table{
 			thead{
 				tr{
-					th(class:'caption','CREATED APPS')
+					th(class:'caption',colspan:7,'CREATED APPS')
 				}
 				tr{
 					th(colspan:4,'Builds Info')

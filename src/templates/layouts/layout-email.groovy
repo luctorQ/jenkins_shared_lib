@@ -13,7 +13,7 @@ html(lang:'en') {
 			border: 1px solid #fff; /*for older IE*/
 			border-style: hidden;
 		}
-		table.caption {
+		table td.caption {
 			background-color: #3a5aa0;
 			color: #fff;
 			font-weight: bold;
