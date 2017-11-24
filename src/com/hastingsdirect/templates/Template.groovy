@@ -5,15 +5,15 @@ import groovy.text.markup.TemplateConfiguration
 
 class Template implements Serializable {
 	MarkupTemplateEngine engine
-	String template
+	String templatePath
 	Template(String template){
-		this.template=template
+		templatePath=template
 		TemplateConfiguration config = new TemplateConfiguration();
 		engine = new MarkupTemplateEngine(this.getClass().getClassLoader(),config);
 	}
 
 	String evaluate(Map bindings=[:]) {
-		def compiledTemplate =engine.createTemplateByPath(template).make(bindings)
+		def compiledTemplate =engine.createTemplateByPath(templatePath).make(bindings)
 		return compiledTemplate.toString()
 	}
 }
