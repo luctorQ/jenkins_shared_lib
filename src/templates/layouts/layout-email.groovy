@@ -21,7 +21,7 @@ html(lang:'en') {
 		}
 		table thead th {
 			padding: 8px;
-			background-color: #b2c6f33d;
+			background-color: #b2c6f3;
 		}
 		table th, table td {
 			padding: 3px;
