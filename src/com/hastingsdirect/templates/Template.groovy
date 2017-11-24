@@ -5,24 +5,15 @@ import groovy.text.markup.TemplateConfiguration
 
 class Template implements Serializable {
 	MarkupTemplateEngine engine
-
-	Template(String workspace){
-		println 'workspace:'+workspace
+	String template
+	Template(String template){
+		this.template=template
 		TemplateConfiguration config = new TemplateConfiguration();
 		engine = new MarkupTemplateEngine(this.getClass().getClassLoader(),config);
 	}
 
-	String eval(String template,Map bindings=[:]) {
+	String eval(Map bindings=[:]) {
 		def compiledTemplate =engine.createTemplateByPath(template).make(bindings)
 		return compiledTemplate.toString()
-	}
-
-	String templateScriptFromCodeSource(String templateFileName) {
-		def is=new InputStreamReader(this.getClass().getResourceAsStream(templateFileName))
-		def gsc=new GroovyCodeSource(is,'script_name_dynamic','UTF-8')
-
-		def shell=new GroovyShell()
-
-		return shell.evaluate(gsc)
 	}
 }
