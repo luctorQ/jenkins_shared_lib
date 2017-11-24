@@ -15,6 +15,7 @@ table{
 			th('Total')
 			th('Failed')
 			th('Skipped')
+			th('Branch')
 		}
 	}
 	tbody{
@@ -29,6 +30,13 @@ table{
 				td(b.junittests.totalCount)
 				td(b.junittests.failCount)
 				td(b.junittests.skipCount)
+				def branchName=b.build.trunk?'TRUNK':null
+				if(!branchName) {
+					def group = (b.build.svnpath =~ /Hastings\/branches\/(\w+)/)
+					branchName=group[0]
+				}
+				
+				td(branchName)
 			}
 		}
 	}
