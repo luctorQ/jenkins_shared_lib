@@ -82,9 +82,9 @@ abstract class ExtendedProperty implements Serializable {
 	}
 
 	static Map fromJson(String jsonString) {
-		//		return Boon.fromJson(jsonString)
-		def mapper=JsonFactory.create()
-		return mapper.fromJson(jsonString,Map.class)
+		return Boon.fromJson(jsonString)
+//		def mapper=JsonFactory.create()
+//		return mapper.fromJson(jsonString,Map.class)
 	}
 	static List fromJsonList(String jsonString) {
 		def mapper=JsonFactory.create()
