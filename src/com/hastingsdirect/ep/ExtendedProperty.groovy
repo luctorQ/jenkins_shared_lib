@@ -10,13 +10,13 @@ abstract class ExtendedProperty implements Serializable {
 	String name;
 	String description;
 	String sharedlibrarygroovyclasspath
-	
+
 	ExtendedProperty(String name,String description='',String sharedlibrarygroovyclasspath="c:/tmp/libs_jenkins_global/jenkins_shared_lib.jar"){
 		this.name=name
 		this.description=description
 		this.sharedlibrarygroovyclasspath=sharedlibrarygroovyclasspath
 	}
-	
+
 	abstract String groovyScript()
 
 	ExtendedChoiceParameterDefinition createJsonField() {
@@ -29,7 +29,7 @@ abstract class ExtendedProperty implements Serializable {
 		return gsc.scriptText
 	}
 
-		
+
 	/**
 	 * method where result may be parsed
 	 * @param paramValue Should be params.<name of ExtendedProperty>
@@ -38,7 +38,7 @@ abstract class ExtendedProperty implements Serializable {
 	static Object getValue(paramValue) {
 		return paramValue
 	}
-		
+
 	static ExtendedChoiceParameterDefinition createJsonField(
 			String name,
 			String groovyscript='',
@@ -80,14 +80,19 @@ abstract class ExtendedProperty implements Serializable {
 				)
 		return parameterDefinition;
 	}
-	
-	static fromJson(String jsonString) {
-		return Boon.fromJson(jsonString)
+
+	static Map fromJson(String jsonString) {
+		//		return Boon.fromJson(jsonString)
+		def mapper=JsonFactory.create()
+		return mapper.fromJson(jsonString,Map.class)
 	}
-	
+	static List fromJsonList(String jsonString) {
+		def mapper=JsonFactory.create()
+		return mapper.fromJson(jsonString,List.class)
+	}
+
+
 	static toJson(value) {
 		return JsonFactory.toJson(value)
 	}
-	
-	
 }
