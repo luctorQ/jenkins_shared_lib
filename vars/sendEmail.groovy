@@ -21,12 +21,12 @@ def call(Map params=[template:null,
 				attachmentsPattern: params.attachments,
 				body: body
 				)
-		eventsStore(
+/*		eventsStore(
 			msg:"Email ${params.subject} sent to ${params.recipients}",
 			type:'EMAIL_SENT',
 			ref:[body:body]
 			)
-	}catch(e) {
+*/	}catch(e) {
 		throw new hudson.AbortException('sendEmail error:'+e)
 	}
 }
