@@ -13,11 +13,12 @@ html(lang:'en') {
 			border: 1px solid #fff; /*for older IE*/
 			border-style: hidden;
 		}
-		table td.caption {
+		table th.caption {
 			background-color: #3a5aa0;
 			color: #fff;
 			font-weight: bold;
 			letter-spacing: .3em;
+			font-size: large;
 		}
 		table thead th {
 			padding: 8px;
@@ -27,7 +28,7 @@ html(lang:'en') {
 			padding: 3px;
 			border-width: 1px;
 			border-style: solid;
-			border-color: #e9effb #ccc;
+			border-color: #3a5aa0;
 			text-align: center;
 		}
 			""" }
