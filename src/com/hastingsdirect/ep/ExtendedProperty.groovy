@@ -89,11 +89,12 @@ abstract class ExtendedProperty implements Serializable {
 				})
 				return list
 			}else {
-				def map=[:]
+				return [:]<<val
+				/*def map=[:]
 				val.each({key,value->
 					map[key]=convert(value)
 				})
-				return map
+				return map*/
 			}
 	
 		}
