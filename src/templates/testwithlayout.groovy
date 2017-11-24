@@ -10,6 +10,9 @@ bodyContents: contents {
 		h3('CREATED APPS')
 		table{
 			tr{
+				th(colspan:4,'CREATED APPS')
+			}
+			tr{
 				th('Status')
 				th('App')
 				th('Build No.')
@@ -22,6 +25,25 @@ bodyContents: contents {
 					td(b.build.jenkinsbuildnumber)
 					td{
 						a(href:b.build.jenkinsbuildurl,b.build.jenkinsbuildurl)
+					}
+				}
+				tr{
+					td(colspan:4,{
+						JUnit TESTS RESULTS
+					})	
+				}
+				tr{
+					td('Total count')
+					td('Failed count')
+					td('Skip count')
+					td('Tests url')
+				}
+				tr{
+					td(b.junittests.totalCount)
+					td(b.junittests.failCount)
+					td(b.junittests.skipCount)
+					td{
+						a(href:b.junittests.testsUrl,b.junittests.testsUrl)
 					}
 				}
 			}

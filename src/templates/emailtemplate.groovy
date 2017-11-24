@@ -5,7 +5,7 @@ html(lang:'en') {
 		style{ yieldUnescaped """ 
 			p {
 				color: red;
-				font-size: 46px;
+				font-size: 46px
 			  }
 			""" }
 	}
