@@ -10,38 +10,37 @@ bodyContents: contents {
 		h3('CREATED APPS')
 		table{
 			caption('CREATED APPS')
-			tr{
-				th('Status')
-				th('App')
-				th('Build No.')
-				th('Build url')
-			}
-			APP_BUILD_DONE.each{b->
+			thead{
 				tr{
-					td(b.build.buildresult)
-					td(b.build.appname)
-					td(b.build.jenkinsbuildnumber)
-					td{
-						a(href:b.build.jenkinsbuildurl,b.build.jenkinsbuildurl)
-					}
-				}
-				caption('JUnit TESTS RESULTS')
-				tr{
-					th('Total count')
-					th('Failed count')
-					th('Skip count')
-					th('Tests url')
+					th(colspan:4,'Builds Info')
+					th(colspan:3,'Tests Info')
 				}
 				tr{
-					td(b.junittests.totalCount)
-					td(b.junittests.failCount)
-					td(b.junittests.skipCount)
-					td{
-						a(href:b.junittests.testsUrl,b.junittests.testsUrl)
-					}
+					th('App')
+					th('Rev')
+					th('Build')
+					th('Status')
+					th('Total')
+					th('Failed')
+					th('Skipped')
 				}
-			}
 
+			}
+			tbody{
+				APP_BUILD_DONE.each{b->
+					tr{
+						td(b.build.appname)
+						td(b.build.svnrevisionnumber)
+						td{
+							a(href:b.build.jenkinsbuildurl,b.build.jenkinsbuildnumber)
+						}
+						td(b.build.buildresult)
+						td(b.junittests.totalCount)
+						td(b.junittests.failCount)
+						td(b.junittests.skipCount)
+					}
+				}
+			}
 		}
 	}:p('No new crated builds')
 

@@ -3,6 +3,9 @@ html(lang:'en') {
 		meta('http-equiv':'"Content-Type" content="text/html; charset=utf-8"')
 		title(title)
 		style{  yieldUnescaped """ 
+	body {
+			font-family:monospace
+		}
 		table {
 			margin: auto;
 			width: 600px;
@@ -11,7 +14,7 @@ html(lang:'en') {
 			border-style: hidden;
 		}
 		table caption {
-			background-color: #f79646;
+			background-color: #3a5aa0;
 			color: #fff;
 			font-size: x-large;
 			font-weight: bold;
@@ -19,16 +22,16 @@ html(lang:'en') {
 		}
 		table thead th {
 			padding: 8px;
-			background-color: #fde9d9;
+			background-color: #b2c6f33d;
 			font-size: large;
 		}
 		table th, table td {
 			padding: 3px;
 			border-width: 1px;
 			border-style: solid;
-			border-color: #f79646 #ccc;
+			border-color: #3a5aa0 #ccc;
+			text-align: center;
 		}
-
 			""" }
 	}
 	body { bodyContents() }
