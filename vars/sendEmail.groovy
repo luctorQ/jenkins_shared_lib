@@ -9,7 +9,7 @@ def call(Map params=[template:null,
 
 	try {
 		def body=Template.evaluate(params.template,params.bindings)
-		params.bindings=null
+/*		params.bindings=null
 		emailext(
 				to: params.recipients,
 				replyTo: 'luchtort@gmail.com',
@@ -17,7 +17,7 @@ def call(Map params=[template:null,
 				attachmentsPattern: params.attachments,
 				body: body
 				)
-/*		eventsStore(
+		eventsStore(
 			msg:"Email ${params.subject} sent to ${params.recipients}",
 			type:'EMAIL_SENT',
 			ref:[body:body]
