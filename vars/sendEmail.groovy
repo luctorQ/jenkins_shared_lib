@@ -18,13 +18,13 @@ def call(Map params=[template:null,
 			ref:[body:body]
 			)
 
-		emailext(
+	/*	emailext(
 				to: params.recipients,
 				replyTo: 'luchtort@gmail.com',
 				subject: params.subject,
 				attachmentsPattern: params.attachments,
 				body: body
-				)
+				)*/
 /*	}catch(e) {
 		e.printStackTrace()
 		throw new hudson.AbortException('sendEmail error:'+e)
