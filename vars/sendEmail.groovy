@@ -33,8 +33,9 @@ def call(String templatepath) {
 
 	println 'bindings:'+bindings
 
-	def str=mytemplate.eval('templates/testwithlayout.groovy',bindings)
+//	def str=mytemplate.eval('templates/testwithlayout.groovy',bindings)
 
+	def str='oo'
 	return str
 }
 
