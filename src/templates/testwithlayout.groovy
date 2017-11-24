@@ -6,7 +6,7 @@ bodyContents: contents {
 
 	//	APP_BUILD_DONE?h3('CREATED APPS'):p('No new crated builds')
 	APP_BUILD_DONE?
-			includeGroovy('/templates/pars/createdApps.groovy')
+			includeGroovy('/templates/parts/createdApps.groovy')
 			:p('No new applications')
 
 
