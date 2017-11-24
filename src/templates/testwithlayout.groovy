@@ -28,9 +28,7 @@ bodyContents: contents {
 					}
 				}
 				tr{
-					td(colspan:4,{
-						JUnit TESTS RESULTS
-					})	
+					td(colspan:4,'JUnit TESTS RESULTS')	
 				}
 				tr{
 					td('Total count')
