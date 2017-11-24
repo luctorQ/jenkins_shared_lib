@@ -13,7 +13,7 @@ html(lang:'en') {
 			border: 1px solid #fff; /*for older IE*/
 			border-style: hidden;
 		}
-		table caption {
+		table.caption {
 			background-color: #3a5aa0;
 			color: #fff;
 			font-weight: bold;
@@ -21,13 +21,13 @@ html(lang:'en') {
 		}
 		table thead th {
 			padding: 8px;
-			background-color: #b2c6f3;
+			background-color: #e9effb;
 		}
 		table th, table td {
 			padding: 3px;
 			border-width: 1px;
 			border-style: solid;
-			border-color: #3a5aa0 #ccc;
+			border-color: #e9effb #ccc;
 			text-align: center;
 		}
 			""" }

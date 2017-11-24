@@ -9,8 +9,10 @@ bodyContents: contents {
 	APP_BUILD_DONE?div{
 		h3('CREATED APPS')
 		table{
-			caption('CREATED APPS')
 			thead{
+				tr{
+					th(class:'caption','CREATED APPS')
+				}
 				tr{
 					th(colspan:4,'Builds Info')
 					th(colspan:3,'Tests Info')
