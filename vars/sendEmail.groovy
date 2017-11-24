@@ -7,7 +7,7 @@ def call(Map params=[template:null,
 			bindings:[:]
 		]) {
 
-	try {
+//	try {
 		def body=Template.evaluate(params.template,params.bindings)
 		println 'body:'+body
 		params.bindings=null
@@ -23,8 +23,8 @@ def call(Map params=[template:null,
 			type:'EMAIL_SENT',
 			ref:[body:body]
 			)
-	}catch(e) {
+/*	}catch(e) {
 		e.printStackTrace()
 		throw new hudson.AbortException('sendEmail error:'+e)
 	}
-}
+*/}
