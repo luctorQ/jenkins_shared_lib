@@ -10,7 +10,6 @@ def call(Map params=[template:null,
 //	try {
 		def body=Template.evaluate(params.template,params.bindings)
 		println 'body:'+body
-//		params.bindings=null
 		
 		eventsStore(
 			msg:"Email ${params.subject} sent to ${params.recipients}",
@@ -18,13 +17,13 @@ def call(Map params=[template:null,
 			ref:[body:body]
 			)
 
-	/*	emailext(
+		emailext(
 				to: params.recipients,
 				replyTo: 'luchtort@gmail.com',
 				subject: params.subject,
 				attachmentsPattern: params.attachments,
 				body: body
-				)*/
+				)
 /*	}catch(e) {
 		e.printStackTrace()
 		throw new hudson.AbortException('sendEmail error:'+e)
