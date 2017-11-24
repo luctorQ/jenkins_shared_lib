@@ -33,7 +33,7 @@ def call(String templatepath) {
 
 	println 'bindings:'+bindings
 
-	def str=mytemplate.eval('templates/build-deploy-summary.groovy',bindings)
+	def str=mytemplate.eval('templates/email-build-deploy-summary.groovy',bindings)
 
 	return str
 }
