@@ -85,10 +85,12 @@ abstract class ExtendedProperty implements Serializable {
 			if(val instanceof List) {
 				def list=[]
 				val.each({
+					println 'it class:'+it.getClass()
 					list<<convert(it)
 				})
 				return list
 			}else {
+				println 'else class:'+val.getClass()
 				return [:]<<val
 				/*def map=[:]
 				val.each({key,value->
