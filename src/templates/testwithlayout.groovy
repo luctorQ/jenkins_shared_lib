@@ -28,13 +28,13 @@ bodyContents: contents {
 					}
 				}
 				tr{
-					td(colspan:4,'JUnit TESTS RESULTS')	
+					th(colspan:4,'JUnit TESTS RESULTS')	
 				}
 				tr{
-					td('Total count')
-					td('Failed count')
-					td('Skip count')
-					td('Tests url')
+					th('Total count')
+					th('Failed count')
+					th('Skip count')
+					th('Tests url')
 				}
 				tr{
 					td(b.junittests.totalCount)
