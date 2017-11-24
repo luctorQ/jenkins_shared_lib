@@ -4,7 +4,7 @@ def call(Map params=[template:null,
 			subject:'No subject',
 			recipients:'', //comma separated list of email addresses
 			attachments:'',
-			bindings:[:]
+			bindings:null
 		]) {
 
 //	try {
