@@ -5,7 +5,7 @@ html(lang:'en') {
 		style{  yieldUnescaped """ 
 		table {
 			margin: auto;
-			//width: 600px;
+			width: 600px;
 			border-collapse: collapse;
 			border: 1px solid #fff; /*for older IE*/
 			border-style: hidden;
@@ -21,6 +21,12 @@ html(lang:'en') {
 			padding: 8px;
 			background-color: #fde9d9;
 			font-size: large;
+		}
+		table th, table td {
+			padding: 3px;
+			border-width: 1px;
+			border-style: solid;
+			border-color: #f79646 #ccc;
 		}
 
 			""" }

@@ -25,9 +25,7 @@ bodyContents: contents {
 						a(href:b.build.jenkinsbuildurl,b.build.jenkinsbuildurl)
 					}
 				}
-				tr{
-					th(colspan:4,'JUnit TESTS RESULTS')	
-				}
+				caption('JUnit TESTS RESULTS')
 				tr{
 					th('Total count')
 					th('Failed count')
