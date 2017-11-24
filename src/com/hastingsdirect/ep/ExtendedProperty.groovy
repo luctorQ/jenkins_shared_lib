@@ -90,8 +90,6 @@ abstract class ExtendedProperty implements Serializable {
 				})
 				return list
 			}else if (val instanceof Map){
-				println 'else class:'+val.getClass()
-//				return [:]<<val
 				def map=[:]
 				val.each({key,value->
 					map[key]=convert(value)
@@ -104,7 +102,6 @@ abstract class ExtendedProperty implements Serializable {
 		}
 	
 	static def fromJson(String jsonString) {
-		
 		def json = Boon.fromJson(jsonString)
 		return convert(json) 
 //		def mapper=JsonFactory.create()
