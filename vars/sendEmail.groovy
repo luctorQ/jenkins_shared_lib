@@ -7,10 +7,6 @@ def call(Map params=[template:null,
 			bindings:null
 		]) {
 
-		def causes=currentBuild.rawBuild.getCauses()
-		causes.each({
-			println 'build cause:'+it
-		})
 //	try {
 		def body=Template.evaluate(params.template,params.bindings)
 		println 'body:'+body
