@@ -12,7 +12,8 @@ bodyContents: contents {
 			includeGroovy('templates/parts/created-apps.groovy')
 			:p('No new applications built this time')
 
-			
+	br()
+	
 	CURRENTLY_DEPLOYED?
 			includeGroovy('templates/parts/deployed-apps.groovy')
 			:p('No information about previous deployment')
