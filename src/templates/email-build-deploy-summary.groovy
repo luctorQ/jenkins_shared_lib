@@ -17,12 +17,17 @@ bodyContents: contents {
 		span(it+' ')
 	})
 	
+	br()
 	
 	APP_BUILD_DONE?
 			includeGroovy('templates/parts/created-apps.groovy')
 			:p('No new applications built this time')
 
 	br()
+	
+	ARTIFACTORY_UPLOAD?
+		p(ARTIFACTORY_UPLOAD)
+		:p('')
 	
 	CURRENTLY_DEPLOYED?
 			includeGroovy('templates/parts/deployed-apps.groovy')
