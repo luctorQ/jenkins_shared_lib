@@ -26,9 +26,11 @@ bodyContents: contents {
 	br()
 	
 	ARTIFACTORY_UPLOAD?
-		p(ARTIFACTORY_UPLOAD)
+		includeGroovy('templates/parts/artifactory-uploaded.groovy')
 		:p('')
 	
+	br()
+		
 	CURRENTLY_DEPLOYED?
 			includeGroovy('templates/parts/deployed-apps.groovy')
 			:p('No information about previous deployment')

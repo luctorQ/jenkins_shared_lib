@@ -1,24 +1,19 @@
 table{
 	thead{
 		tr{
-			th(class:'caption',colspan:4,'Uploaded to artifactory')
+			th(class:'caption',colspan:2,'Uploaded to artifactory')
 		}
 		tr{
-			th('App')
-			th('Rev')
-			th('Category')
-			th('Build')
+			th('Artifact')
+			th('Status')
 		}
 	}
 	tbody{
-		def CD=CURRENTLY_DEPLOYED[0]?CURRENTLY_DEPLOYED[0]:[]
-		CD.each{build->
+		ARTIFACTORY_UPLOAD.each{upload->
 			tr{
-				td(build.appname)
-				td(build.svnrevisionnumber)
-				td(build.category)
+				td(upload.artifactName)
 				td{
-					a(href:build.jenkinsbuildurl,build.jenkinsbuildnumber)
+					a(href:upload.publishUrl,upload.status)
 				}
 			}
 		}
