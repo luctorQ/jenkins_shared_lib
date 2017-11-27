@@ -5,8 +5,8 @@ bodyContents: contents {
 	p("Build BRANCH:${PARAMS.SVN_BRANCH}")
 	p("Job URL:${JOB.absoluteUrl}")
 //	def covered=PARAMS.findAll({key,value->key.startsWith('INCLUDE_') && value}).collect({it.key})}
-	def covered=PARAMS.findAll({key,value->key.startsWith('INCLUDE_')})
-	p("APPS covered by this build: ${covered}")
+//	def covered=PARAMS.findAll({key,value->key.startsWith('INCLUDE_')})
+//	p("APPS covered by this build: ${covered}")
 //	p("APPS disabled in CI build: ${PARAMS.findAll({key,value->key.startsWith('INCLUDE_') && !value}).collect({it.key})}")
 	
 	APP_BUILD_DONE?
