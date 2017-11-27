@@ -11,10 +11,10 @@ table{
 	tbody{
 		ARTIFACTORY_UPLOAD.each{upload->
 			tr{
-				td(upload.artifactName)
 				td{
-					a(href:upload.publishUrl,upload.status)
+					a(href:upload.publishUrl,upload.artifactName)
 				}
+				td(upload.status)
 			}
 		}
 	}
