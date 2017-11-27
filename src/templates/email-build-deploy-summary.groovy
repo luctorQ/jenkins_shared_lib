@@ -3,9 +3,11 @@ title: 'email',
 bodyContents: contents {
 
 	p("Build BRANCH:${PARAMS.SVN_BRANCH}")
-	p("Job URL:${JOB.absoluteUrl}")
-//	def covered=PARAMS.findAll({key,value->key.startsWith('INCLUDE_') && value}).collect({it.key})}
-//	def covered=PARAMS.findAll({key,value->key.startsWith('INCLUDE_')})
+	p("Job URL: ${JOB.absoluteUrl}")
+/*	def covered=PARAMS.findAll({key,value->
+			key.startsWith('INCLUDE_') && value
+		}).collect({it.key})
+*///	def covered=PARAMS.findAll({key,value->key.startsWith('INCLUDE_')})
 //	p("APPS covered by this build: ${covered}")
 //	p("APPS disabled in CI build: ${PARAMS.findAll({key,value->key.startsWith('INCLUDE_') && !value}).collect({it.key})}")
 	
@@ -13,7 +15,7 @@ bodyContents: contents {
 			includeGroovy('templates/parts/created-apps.groovy')
 			:p('No new applications built this time')
 
-//	br()
+	br()
 	
 	CURRENTLY_DEPLOYED?
 			includeGroovy('templates/parts/deployed-apps.groovy')
