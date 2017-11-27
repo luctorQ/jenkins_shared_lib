@@ -5,11 +5,16 @@ bodyContents: contents {
 	p("Build BRANCH:${PARAMS.SVN_BRANCH}")
 	p("Job URL: ${JOB.absoluteUrl}")
 	
-	p("APPS covered by build",{
-		COVERED_APPS.each({
-			span(it)
-		})
+	span("APPS covered by build:")
+	COVERED_APPS.each({
+		span(it)
 	})
+	
+	span("APPS disabled in build:")
+	NOT_COVERED_APPS.each({
+		span(it)
+	})
+	
 	
 	APP_BUILD_DONE?
 			includeGroovy('templates/parts/created-apps.groovy')
