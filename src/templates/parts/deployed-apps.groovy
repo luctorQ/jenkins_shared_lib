@@ -6,6 +6,7 @@ table{
 		tr{
 			th('App')
 			th('Rev')
+			th('Category')
 			th('Build')
 		}
 	}
@@ -15,6 +16,7 @@ table{
 			tr{
 				td(build.appname)
 				td(build.svnrevisionnumber)
+				td(build.category)
 				td{
 					a(href:build.jenkinsbuildurl,build.jenkinsbuildnumber)
 				}
