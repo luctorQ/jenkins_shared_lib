@@ -6,9 +6,6 @@ import com.hastingsdirect.sql.RepositoryBuilds;
 def repo=new RepositoryBuilds()
 def builds = repo.buildsOnePromoted()
 
-def dbInfo=repo.fetchDBInfo2()
-
-
 def jsonEditorOptions = ExtendedProperty.fromJson(/{
 	   disable_edit_json: true,
 	   disable_properties: true,
@@ -44,23 +41,47 @@ def jsonEditorOptions = ExtendedProperty.fromJson(/{
 		  "readOnly":true,
 		  "propertyOrder":3
 		},
+		"abjenkinsbuildid": {
+		  "title":"CM build",
+		  "type": "number",
+		  "readOnly":true,
+		  "propertyOrder":4
+		},
 		"pcsvnrevisionnumber": {
 		  "title":"PC svn",
 		  "type": "number",
 		  "readOnly":true,
-		  "propertyOrder":4
+		  "propertyOrder":5
+		},
+		"pcjenkinsbuildid": {
+		  "title":"PC build",
+		  "type": "number",
+		  "readOnly":true,
+		  "propertyOrder":6
 		},
 		"bcsvnrevisionnumber": {
 		  "title":"BC svn",
 		  "type": "number",
 		  "readOnly":true,
-		  "propertyOrder":5
+		  "propertyOrder":7
+		},
+		"bcjenkinsbuildid": {
+			"title":"BC build",
+			"type": "number",
+			"readOnly":true,
+			"propertyOrder":8
 		},
 		"ccsvnrevisionnumber": {
 		  "title":"CC svn",
 		  "type": "number",
 		  "readOnly":true,
-		  "propertyOrder":6
+		  "propertyOrder":9
+		},
+		"ccjenkinsbuildid": {
+			"title":"PC build",
+			"type": "number",
+			"readOnly":true,
+			"propertyOrder":10
 		}
 	  }
 	}

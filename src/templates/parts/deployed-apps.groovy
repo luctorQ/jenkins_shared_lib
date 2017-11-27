@@ -1,0 +1,23 @@
+table{
+	thead{
+		tr{
+			th(class:'caption',colspan:3,'DEPLOYED APPS')
+		}
+		tr{
+			th('App')
+			th('Rev')
+			th('Build')
+		}
+	}
+	tbody{
+		CURRENTLY_DEPLOYED.each{build->
+			tr{
+				td(build.appname)
+				td(build.svnrevisionnumber)
+				td{
+					a(href:build.jenkinsbuildurl,build.jenkinsbuildnumber)
+				}
+			}
+		}
+	}
+}

@@ -1,10 +1,10 @@
 class events implements Serializable {
 	private List history=[]
-
+	
 	def add(String msg,String type='GENERAL') {
 		this.add(msg:msg,type:type)
 	}
-
+	
 	def add(Map params) {
 		def eventData=[
 			msg:params.msg,
@@ -14,7 +14,13 @@ class events implements Serializable {
 		];
 		history<<eventData
 	}
-
+	
+	def addAll(List events) {
+		events.each({
+			history<<it
+		})
+	}
+		
 	def getList() {
 		return history
 	}

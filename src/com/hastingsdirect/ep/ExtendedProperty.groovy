@@ -10,13 +10,13 @@ abstract class ExtendedProperty implements Serializable {
 	String name;
 	String description;
 	String sharedlibrarygroovyclasspath
-
+	
 	ExtendedProperty(String name,String description='',String sharedlibrarygroovyclasspath="c:/tmp/libs_jenkins_global/jenkins_shared_lib.jar"){
 		this.name=name
 		this.description=description
 		this.sharedlibrarygroovyclasspath=sharedlibrarygroovyclasspath
 	}
-
+	
 	abstract String groovyScript()
 
 	ExtendedChoiceParameterDefinition createJsonField() {
@@ -29,7 +29,7 @@ abstract class ExtendedProperty implements Serializable {
 		return gsc.scriptText
 	}
 
-
+		
 	/**
 	 * method where result may be parsed
 	 * @param paramValue Should be params.<name of ExtendedProperty>
@@ -38,7 +38,7 @@ abstract class ExtendedProperty implements Serializable {
 	static Object getValue(paramValue) {
 		return paramValue
 	}
-
+		
 	static ExtendedChoiceParameterDefinition createJsonField(
 			String name,
 			String groovyscript='',
@@ -80,35 +80,14 @@ abstract class ExtendedProperty implements Serializable {
 				)
 		return parameterDefinition;
 	}
-
-	static def convert(val){
-			if(val instanceof List) {
-				def list=[]
-				val.each({
-					println 'it class:'+it.getClass()
-					list<<convert(it)
-				})
-				return list
-			}else if (val instanceof Map){
-				def map=[:]
-				val.each({key,value->
-					map[key]=convert(value)
-				})
-				return map
-			}else {
-				return val
-			}
 	
-		}
-	
-	static def fromJson(String jsonString) {
-		def json = Boon.fromJson(jsonString)
-		return convert(json) 
-//		def mapper=JsonFactory.create()
-//		return mapper.fromJson(jsonString,Map.class)
+	static fromJson(String jsonString) {
+		return Boon.fromJson(jsonString)
 	}
-
+	
 	static toJson(value) {
 		return JsonFactory.toJson(value)
 	}
+	
+	
 }

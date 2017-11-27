@@ -30,9 +30,7 @@ def call(RunWrapper build) {
 }
 
 def call() {
-	println('eventsRestore call')
 	def extHistory=env.EVENTS_HISTORY
 	def value=parse(extHistory)
-	println('eventsRestore call result:'+value)
 	return value
 }
