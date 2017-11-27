@@ -35,5 +35,5 @@ bodyContents: contents {
 	CURRENTLY_DEPLOYED?
 			includeGroovy('templates/parts/deployed-apps.groovy')
 			:p('No information about previous deployment')
-	p('rest of email')
+
 }
