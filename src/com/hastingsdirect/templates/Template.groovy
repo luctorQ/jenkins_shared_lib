@@ -4,16 +4,12 @@ import groovy.text.markup.MarkupTemplateEngine
 import groovy.text.markup.TemplateConfiguration
 
 class Template implements Serializable {
-	MarkupTemplateEngine engine
-	String templatePath
-	Template(String template){
-		templatePath=template
+	
+	static String evaluate(String templatepath,Map bindings=[:]) {
 		TemplateConfiguration config = new TemplateConfiguration();
-		engine = new MarkupTemplateEngine(this.getClass().getClassLoader(),config);
-	}
-
-	String evaluate(Map bindings=[:]) {
-		def compiledTemplate =engine.createTemplateByPath(templatePath).make(bindings)
+		MarkupTemplateEngine engine = new MarkupTemplateEngine(Template.class.getClassLoader(),config);
+		
+		def compiledTemplate =engine.createTemplateByPath(templatepath).make(bindings)
 		return compiledTemplate.toString()
 	}
 }
