@@ -7,12 +7,14 @@ bodyContents: contents {
 	
 	span("APPS covered by build:")
 	COVERED_APPS.each({
-		span(it)
+		span(it+' ')
 	})
+	
+	br()
 	
 	span("APPS disabled in build:")
 	NOT_COVERED_APPS.each({
-		span(it)
+		span(it+' ')
 	})
 	
 	
