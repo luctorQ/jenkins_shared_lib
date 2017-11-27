@@ -18,6 +18,7 @@ bodyContents: contents {
 	})
 	
 	br()
+	br()
 	
 	APP_BUILD_DONE?
 			includeGroovy('templates/parts/created-apps.groovy')
