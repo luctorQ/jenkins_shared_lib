@@ -1,7 +1,7 @@
 table{
 	thead{
 		tr{
-			th(class:'caption',colspan:3,'DEPLOYED APPS')
+			th(class:'caption',colspan:3,'Previousely deployed apps')
 		}
 		tr{
 			th('App')
