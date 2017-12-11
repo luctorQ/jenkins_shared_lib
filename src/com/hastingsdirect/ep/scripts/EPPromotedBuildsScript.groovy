@@ -29,60 +29,90 @@ def jsonEditorOptions = ExtendedProperty.fromJson(/{
 		  "format":"checkbox",
 		  "propertyOrder":1
 		},
-		"cijenkinsbuildid": {
-		  "title":"CI Build",
-		  "type": "number",
-		  "readOnly":true,
-		  "propertyOrder":2
+		"id":{
+			"title":"CI Build Id",
+			"type": "number",
+			"readOnly":true,
+			"propertyOrder":2
+		},
+		"branch_short":{
+			"title":"Branch",
+			"type": "string",
+			"readOnly":true,
+			"propertyOrder":3
+		},
+		"jobstatus":{
+			"title":"Status",
+			"type": "string",
+			"readOnly":true,
+			"propertyOrder":3
+		},
+		"smoketeststatus":{
+			"title":"Smokes",
+			"type": "string",
+			"readOnly":true,
+			"propertyOrder":4
+		},
+		"cijenkinsbuildname":{
+			"title":"CI Job",
+			"type": "string",
+			"readOnly":true,
+			"propertyOrder":5
+		},
+		"cijenkinsbuildid":{
+			"title":"CI Job no",
+			"type": "number",
+			"readOnly":true,
+			"propertyOrder":6
 		},
 		"absvnrevisionnumber": {
 		  "title":"CM svn",
 		  "type": "number",
 		  "readOnly":true,
-		  "propertyOrder":3
-		},
-		"abjenkinsbuildid": {
-		  "title":"CM build",
-		  "type": "number",
-		  "readOnly":true,
-		  "propertyOrder":4
+		  "propertyOrder":7
 		},
 		"pcsvnrevisionnumber": {
 		  "title":"PC svn",
 		  "type": "number",
 		  "readOnly":true,
-		  "propertyOrder":5
-		},
-		"pcjenkinsbuildid": {
-		  "title":"PC build",
-		  "type": "number",
-		  "readOnly":true,
-		  "propertyOrder":6
+		  "propertyOrder":8
 		},
 		"bcsvnrevisionnumber": {
 		  "title":"BC svn",
 		  "type": "number",
 		  "readOnly":true,
-		  "propertyOrder":7
-		},
-		"bcjenkinsbuildid": {
-			"title":"BC build",
-			"type": "number",
-			"readOnly":true,
-			"propertyOrder":8
+		  "propertyOrder":9
 		},
 		"ccsvnrevisionnumber": {
 		  "title":"CC svn",
 		  "type": "number",
 		  "readOnly":true,
-		  "propertyOrder":9
+		  "propertyOrder":10
 		},
-		"ccjenkinsbuildid": {
-			"title":"PC build",
+		"abjenkinsbuildid": {
+		  "title":"CM build",
+		  "type": "number",
+		  "readOnly":true,
+		  "propertyOrder":11
+		},
+		"pcjenkinsbuildid": {
+		  "title":"PC build",
+		  "type": "number",
+		  "readOnly":true,
+		  "propertyOrder":12
+		},
+		"bcjenkinsbuildid": {
+			"title":"BC build",
 			"type": "number",
 			"readOnly":true,
-			"propertyOrder":10
-		}
+			"propertyOrder":13
+		},
+		"ccjenkinsbuildid": {
+			"title":"CC build",
+			"type": "number",
+			"readOnly":true,
+			"propertyOrder":14
+		}		
 	  }
 	}
 },

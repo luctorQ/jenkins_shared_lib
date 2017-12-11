@@ -1,8 +1,10 @@
 import java.util.Map
 
+import com.hastingsdirect.pipeline.PipelineUtils
 import org.boon.Boon
 import org.boon.json.JsonFactory
 import org.jenkinsci.plugins.workflow.support.steps.build.RunWrapper
+
 
 def parse(String jsonHistory) {
 	def history=Boon.fromJson(jsonHistory?:'[]')
@@ -14,6 +16,9 @@ def parse(String jsonHistory) {
 			def value=row[key]
 			if(key=='date') {
 				value=new Date(row[key])
+			}
+			if(key=='ref') {
+				value=PipelineUtils.convertJsonToSerialized(value)
 			}
 			rowMap[key]=value
 		}

@@ -11,8 +11,7 @@ table{
 		}
 	}
 	tbody{
-		def CD=CURRENTLY_DEPLOYED[0]?CURRENTLY_DEPLOYED[0]:[]
-		CD.each{build->
+		CURRENTLY_DEPLOYED.each{build->
 			tr{
 				td(build.appname)
 				td(build.svnrevisionnumber)

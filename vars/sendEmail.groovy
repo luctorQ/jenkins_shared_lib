@@ -22,6 +22,7 @@ def call(Map params=[template:null,
 				replyTo: 'luchtort@gmail.com',
 				subject: params.subject,
 				attachmentsPattern: params.attachments,
+				mimeType: 'text/html',
 				body: body
 				)
 /*	}catch(e) {

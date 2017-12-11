@@ -26,7 +26,7 @@ class PipelineUtils {
 		}
 		return configMap
 	}
-
+	
 	static String lockAppServerName(servername,appservername) {
 		return "${servername}_${appservername}"
 	}

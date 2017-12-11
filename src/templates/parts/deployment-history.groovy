@@ -1,0 +1,19 @@
+table{
+	thead{
+		tr{
+			th(class:'caption',colspan:2,'Deployment history')
+		}
+		tr{
+			th('Date')
+			th('Info')
+		}
+	}
+	tbody{		
+		HISTORY_EVENTS.each{event->
+			tr{
+				td(event.date)
+				td(class:'left-aligned',event.msg)
+			}
+		}
+	}
+}

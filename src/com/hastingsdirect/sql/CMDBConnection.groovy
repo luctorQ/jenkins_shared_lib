@@ -3,19 +3,20 @@ package com.hastingsdirect.sql
 import groovy.sql.Sql
 
 class CMDBConnection implements Serializable {
-		
+
+			
 	def url = "jdbc:sqlserver://bx1-prd-sql01.network.uk.ad:1433;databaseName=RMCMDB"
 	def user = "JenkinsUser"
 	def password = "Ak5TLEIB5HSDSB2otvN0ONdejwLkXtup!"
 	def driver = 'com.microsoft.sqlserver.jdbc.SQLServerDriver'
-		
+	
 /*
 	String url ="jdbc:h2:tcp://172.19.128.17:9092/~/teste" //just for local tests on Jenkins04 box
 	String user="sa"
 	String password= ""
 	String driver= "org.h2.Driver"
-
-*/	
+*/
+	
 
 	
 	static Sql createConnection() {

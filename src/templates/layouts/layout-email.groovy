@@ -18,7 +18,6 @@ html(lang:'en') {
 			color: #fff;
 			font-weight: bold;
 			letter-spacing: .3em;
-			font-size: large;
 		}
 		table thead th {
 			padding: 8px;
@@ -30,6 +29,9 @@ html(lang:'en') {
 			border-style: solid;
 			border-color: #3a5aa0;
 			text-align: center;
+		}
+		table td.left-aligned {
+			text-align:left
 		}
 			""" }
 	}

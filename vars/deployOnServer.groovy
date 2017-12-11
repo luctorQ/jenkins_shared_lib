@@ -162,9 +162,13 @@ def createDeployApplicationJob(preparedBuildInfo,appServer,server,appConfig) {
 			println("Deployment for appID [${appID}], Jenkins build number [${currentBuild.id}] is successful.")
 			println("Updating CMDB.")
 			def result = repoBuilds.updateAppWithDeploymentInfo(buildID, deploymentDate, buildUser, absoluteUrl, appID)
+			
+			def deploymentInfo=[:]<<preparedBuildInfo
+			deploymentInfo['appservername']=appServer.name
+			deploymentInfo['servername']=server.name
 			eventsStore(msg:"Deployed app ${preparedBuildInfo.appname} on server ${server.name}:${appServer.name}",
 				type:"DEPLOYED_APP",
-				ref:preparedBuildInfo)
+				ref:deploymentInfo)
 		} else {
 			//			currentBuild.result = "UNSTABLE"
 			//			println("Setting current build status to unstable.")

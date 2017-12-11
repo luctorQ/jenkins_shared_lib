@@ -57,7 +57,7 @@ def uploadBuildToArtifactory(buildInfo) {
 			[$class: 'UsernamePasswordMultiBinding', credentialsId: "ARTIFACTORY", passwordVariable: 'PWORD', usernameVariable: 'UNAME']
 		]) {
 			def uploadStatus
-			ws ("${workspace}/dist/ear") { uploadStatus=bat "${globalConfig.CURL} --silent -u${UNAME}:${PWORD} -T \"${artifactName}\" ${publishUrl}" }
+			dir("${workspace}/dist/ear") { uploadStatus=bat "${globalConfig.CURL} --silent -u${UNAME}:${PWORD} -T \"${artifactName}\" ${publishUrl}"  }
 			if (uploadStatus =~ /errors/) {
 				echo "Artifactory upload Error:"+uploadStatus
 				eventsStore(msg:"Error during upload to artifactory application ${buildInfo.appname} to url ${publishUrl}",

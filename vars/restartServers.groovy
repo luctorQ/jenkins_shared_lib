@@ -75,7 +75,7 @@ def createRemoteServerRestartJob(appServer,server,credential) {
 		/*
 		 *  Check that service is up and running after restart before proceeding
 		 */
-		serviceStatusBool = checkRemoteServerServiceStatus("SVC_TST_Autodeploy", remoteServiceName, remoteServer)
+//		serviceStatusBool = checkRemoteServerServiceStatus("SVC_TST_Autodeploy", remoteServiceName, remoteServer)
 	}
 }
 
