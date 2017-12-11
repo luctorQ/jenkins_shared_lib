@@ -7,8 +7,8 @@ import org.jenkinsci.plugins.workflow.support.steps.build.RunWrapper
 
 
 def parse(String jsonHistory) {
-	def history=Boon.fromJson(jsonHistory?:'[]')
-
+//	def history=Boon.fromJson(jsonHistory?:'[]')
+	def history=readJSON(text:jsonHistory?:'[]')
 	def parsedHistory=[]
 	history.each({row->
 		def rowMap=[:]
