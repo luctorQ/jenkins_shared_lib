@@ -17,11 +17,10 @@ def parse(String jsonHistory) {
 			if(key=='date') {
 				value=new Date(row[key])
 			}
-			if(key=='ref') {
-//				value=PipelineUtils.convertJsonToSerialized(value)
-				value=readJSON(text:value)
+/*			if(key=='ref') {
+				value=PipelineUtils.convertJsonToSerialized(value)
 			}
-			rowMap[key]=value
+*/			rowMap[key]=value
 		}
 		parsedHistory<<rowMap
 	})
